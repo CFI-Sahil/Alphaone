@@ -1,0 +1,368 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-bright: #393939;
+  --color-surface: #0d0d0d;
+  --color-inverse-on-surface: #303030;
+  --color-inverse-surface: #e4e2e1;
+  --color-surface-container-high: #1a1a1a;
+  --color-on-primary-container: #590700;
+  --color-surface-container-lowest: #050505;
+  --color-on-primary-fixed: #3f0400;
+  --color-on-error-container: #ffdad6;
+  --color-on-background: #e4e2e1;
+  --color-on-tertiary-fixed: #1c1b1b;
+  --color-on-error: #690005;
+  --color-error: #ffb4ab;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed-variant: #8f1200;
+  --color-on-surface: #F3F0E5;
+  --color-on-secondary-fixed-variant: #48473f;
+  --color-tertiary: #c9c6c5;
+  --color-outline-variant: #333333;
+  --color-secondary-fixed: #e5e2d8;
+  --color-surface-container: #111111;
+  --color-tertiary-fixed: #e5e2e1;
+  --color-surface-tint: #F05236;
+  --color-surface-dim: #0a0a0a;
+  --color-primary: #F05236;
+  --color-on-surface-variant: #a3a3a3;
+  --color-on-secondary-container: #b7b5ab;
+  --color-primary-fixed-dim: #ffb4a5;
+  --color-surface-variant: #1a1a1a;
+  --color-secondary-fixed-dim: #c9c7bc;
+  --color-inverse-primary: #b42710;
+  --color-surface-container-highest: #222222;
+  --color-on-secondary: #31312a;
+  --color-background: #0d0d0d;
+  --color-secondary-container: #48473f;
+  --color-tertiary-container: #929090;
+  --color-on-tertiary-fixed-variant: #474646;
+  --color-on-tertiary: #313030;
+  --color-on-secondary-fixed: #1c1c15;
+  --color-on-tertiary-container: #2a2a29;
+  --color-primary-fixed: #ffdad3;
+  --color-tertiary-fixed-dim: #c9c6c5;
+  --color-primary-container: #fb5a3d;
+  --color-secondary: #c9c7bc;
+  --color-surface-container-low: #0a0a0a;
+  --color-error-container: #93000a;
+  --color-outline: #aa8983;
+  --color-accent: #F05236;
+  --color-ivory: #F3F0E5;
+
+  --font-syne: "Syne", sans-serif;
+  --font-geist: "Geist", sans-serif;
+}
+
+/* Custom Base Styles */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F05236;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F05236;
+}
+
+/* Text Stroke */
+.stroke-text {
+  -webkit-text-stroke: 1px #F3F0E5;
+  color: transparent;
+}
+
+/* Cinematic Gradients */
+.cinematic-gradient {
+  background: linear-gradient(to top, rgba(13, 13, 13, 1) 0%, rgba(13, 13, 13, 0.4) 50%, rgba(13, 13, 13, 0) 100%);
+}
+
+.editorial-overlay {
+  background: linear-gradient(to top, rgba(13, 13, 13, 1) 0%, rgba(13, 13, 13, 0.4) 100%);
+}
+
+/* Brutalist Borders */
+.brutalist-border {
+  border: 1px solid #333333;
+}
+
+.brutalist-border-bottom {
+  border-bottom: 1px solid #333333;
+}
+
+.brutalist-border-top {
+  border-top: 1px solid #333333;
+}
+
+.brutalist-border-right {
+  border-right: 1px solid #333333;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #F3F0E5;
+  color: #0d0d0d;
+  border-radius: 0px;
+  font-family: "Geist", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+
+.btn-primary:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-primary:hover {
+  color: #F3F0E5 !important;
+}
+
+/* Nav Link Hover animations */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #F05236;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Scroll Animation Styles */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1), transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1), transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1), transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1), transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes grid-pan-pulse {
+  0% {
+    background-position: 0px 0px;
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.05;
+  }
+
+  100% {
+    background-position: 0px 75px;
+    opacity: 0.15;
+  }
+}
+
+/* Custom industrial grid pattern */
+.brutalist-grid-overlay {
+  background-image: linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
+  background-size: 75px 75px;
+  animation: grid-pan-pulse 20s linear infinite;
+  pointer-events: none;
+}
+
+/* Mobile-safe full viewport height for hero sections */
+/* Uses dvh (dynamic viewport height) which adjusts for mobile browser chrome */
+.hero-full-height {
+  min-height: 100dvh;
+}
+
+/* Scroll indicator bounce */
+@keyframes scroll-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s infinite ease-in-out;
+}
+
+/* Custom text selection highlights to prevent merge on orange backgrounds */
+::selection {
+  background-color: #f05236;
+  color: #ffffff;
+}
+
+/* Contextual override: For orange accent backgrounds, use a black selection highlight */
+.bg-accent ::selection,
+.bg-accent::selection {
+  background-color: #131313;
+  color: #ffffff;
+}
+
+/* Remove outline and tap highlight globally for interactive elements */
+a,
+button,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* Button slide fill animation */
+.btn-slide-fill,
+.btn-slide-fill-surface,
+.btn-slide-fill-white {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-slide-fill::before,
+.btn-slide-fill-surface::before,
+.btn-slide-fill-white::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+
+.btn-slide-fill::before {
+  background-color: var(--color-accent);
+}
+
+.btn-slide-fill-surface::before {
+  background-color: var(--color-surface);
+}
+
+.btn-slide-fill-white::before {
+  background-color: var(--color-white);
+}
+
+.btn-slide-fill:hover::before,
+.btn-slide-fill-surface:hover::before,
+.btn-slide-fill-white:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-slide-fill:hover,
+.btn-slide-fill-surface:hover {
+  color: var(--color-white) !important;
+}
+
+.btn-slide-fill-white:hover {
+  color: var(--color-accent) !important;
+}
+
+a:focus,
+button:focus,
+[role="button"]:focus {
+  outline: none !important;
+}
