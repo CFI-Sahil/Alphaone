@@ -98,10 +98,12 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Reveal variant="up" delay={0}>
               <div className="brutalist-border p-8 bg-background/50 hover:bg-surface-variant transition-colors group h-full">
-                <span className="material-symbols-outlined text-[48px] text-accent mb-6 block group-hover:scale-110 transition-transform">
-                  fitness_center
-                </span>
-                <h3 className="font-syne text-xl text-on-background uppercase mb-4 font-bold">Brutal High-Intensity</h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="material-symbols-outlined text-[48px] text-accent block group-hover:scale-110 transition-transform">
+                    fitness_center
+                  </span>
+                  <h3 className="font-syne text-xl text-on-background uppercase font-bold leading-tight">Brutal High-Intensity</h3>
+                </div>
                 <p className="font-geist text-sm text-on-surface-variant leading-relaxed">
                   Functional training pushed to its absolute limit.
                 </p>
@@ -110,10 +112,12 @@ export default function About() {
 
             <Reveal variant="up" delay={150} className="mt-0 lg:mt-12">
               <div className="brutalist-border p-8 bg-background/50 hover:bg-surface-variant transition-colors group h-full">
-                <span className="material-symbols-outlined text-[48px] text-accent mb-6 block group-hover:scale-110 transition-transform">
-                  workspace_premium
-                </span>
-                <h3 className="font-syne text-xl text-on-background uppercase mb-4 font-bold">Elite Protocols</h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="material-symbols-outlined text-[48px] text-accent block group-hover:scale-110 transition-transform">
+                    workspace_premium
+                  </span>
+                  <h3 className="font-syne text-xl text-on-background uppercase font-bold leading-tight">Elite Protocols</h3>
+                </div>
                 <p className="font-geist text-sm text-on-surface-variant leading-relaxed">
                   Calculated, tested programming to forge unbreakable humans.
                 </p>
@@ -122,10 +126,12 @@ export default function About() {
 
             <Reveal variant="up" delay={300} className="mt-0 lg:mt-24">
               <div className="brutalist-border p-8 bg-background/50 hover:bg-surface-variant transition-colors group h-full">
-                <span className="material-symbols-outlined text-[48px] text-accent mb-6 block group-hover:scale-110 transition-transform">
-                  local_fire_department
-                </span>
-                <h3 className="font-syne text-xl text-on-background uppercase mb-4 font-bold">Unrelenting Will</h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="material-symbols-outlined text-[48px] text-accent block group-hover:scale-110 transition-transform">
+                    local_fire_department
+                  </span>
+                  <h3 className="font-syne text-xl text-on-background uppercase font-bold leading-tight">Unrelenting Will</h3>
+                </div>
                 <p className="font-geist text-sm text-on-surface-variant leading-relaxed">
                   We provide the tools. You bring the raw discipline.
                 </p>

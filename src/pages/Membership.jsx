@@ -145,7 +145,7 @@ export default function Membership() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h1 className="font-syne text-[36px] md:text-[64px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-on-background uppercase mb-4 tracking-tighter font-extrabold leading-none" style={{ perspective: '1000px' }}>
+            <h1 className="font-syne text-[34px] md:text-[64px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-on-background uppercase mb-4 tracking-tighter font-extrabold leading-none" style={{ perspective: '1000px' }}>
               <span className="block">
                 {"Membership".split(" ").map((w,i) => <motion.span key={i} variants={lineRevealVariants} className="inline-block mr-[0.25em] origin-bottom">{w}</motion.span>)}
               </span>

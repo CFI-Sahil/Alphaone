@@ -75,7 +75,7 @@ export default function Navbar() {
   return (
     <>
       <header className={`sticky top-0 z-50 border-b transition-all duration-300 ${isOpen ? 'bg-[#0a0a0a] border-white/10 backdrop-blur-md' : 'bg-[rgba(10,10,10,0.92)] border-outline-variant/30 backdrop-blur-md shadow-lg'}`}>
-        <div className={`flex justify-between items-center w-full px-4 md:px-6 max-w-container-max mx-auto transition-all duration-300 ${isScrolled ? 'py-2' : 'py-5'}`}>
+        <div className={`flex justify-between items-center w-full px-4 md:px-6 max-w-container-max mx-auto transition-all duration-300 py-5 ${isScrolled ? 'lg:py-2' : ''}`}>
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <motion.img
@@ -83,7 +83,7 @@ export default function Navbar() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               alt="ALPHAONE Logo"
-              className={`w-auto transition-all duration-500 ${isScrolled ? 'h-9 md:h-11' : 'h-12 md:h-14'}`}
+              className={`w-auto transition-all duration-500 h-12 md:h-14 ${isScrolled ? 'lg:h-11' : ''}`}
               whileHover={{ scale: 0.95 }}
               src={logoTransparent}
             />

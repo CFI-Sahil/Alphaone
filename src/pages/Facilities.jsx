@@ -68,7 +68,7 @@ export default function Facilities() {
             <p className="font-geist text-xs text-background/60 uppercase tracking-widest mb-4 font-bold">
               The Arsenal
             </p>
-            <h2 className="font-syne text-[34px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight">
+            <h2 className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight">
               Train.
             </h2>
           </Reveal>
@@ -129,7 +129,7 @@ export default function Facilities() {
             <p className="font-geist text-xs text-on-background/60 uppercase tracking-widest mb-4 font-bold">
               Regeneration
             </p>
-            <h2 className="font-syne text-[34px] md:text-[80px] lg:text-[96px] text-on-background uppercase leading-none font-extrabold tracking-tight">
+            <h2 className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-on-background uppercase leading-none font-extrabold tracking-tight">
               Recover.
             </h2>
           </Reveal>
@@ -175,7 +175,7 @@ export default function Facilities() {
             <p className="font-geist text-xs text-background/60 uppercase tracking-widest mb-4 font-bold">
               The Space
             </p>
-            <h2 className="font-syne text-[34px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight">
+            <h2 className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight">
               Experience.
             </h2>
           </Reveal>
