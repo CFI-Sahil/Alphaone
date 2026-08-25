@@ -10,21 +10,8 @@ export default function Navbar() {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
-    
-    // Always revert to normal at the very top
-    if (latest <= 50) {
-      setIsScrolled(false);
-      return;
-    }
-
-    if (latest < previous) {
-      // Scrolling UP -> Expand back to normal
-      setIsScrolled(false);
-    } else if (latest > 50 && latest > previous) {
-      // Scrolling DOWN past 50px -> Shrink to compact
-      setIsScrolled(true);
-    }
+    // Only shrink/expand based on scroll position to prevent layout thrashing at page boundaries
+    setIsScrolled(latest > 50);
   });
 
   useEffect(() => {
@@ -79,11 +66,11 @@ export default function Navbar() {
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <motion.img
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
               alt="ALPHAONE Logo"
-              className={`w-auto transition-all duration-500 h-12 md:h-14 ${isScrolled ? 'lg:h-11' : ''}`}
+              className={`w-auto transition-[height] duration-500 h-12 md:h-14 ${isScrolled ? 'lg:h-11' : ''}`}
               whileHover={{ scale: 0.95 }}
               src={logoTransparent}
             />

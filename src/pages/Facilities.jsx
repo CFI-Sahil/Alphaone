@@ -64,14 +64,42 @@ export default function Facilities() {
       {/* Train Section - Editorial Equipment Grid */}
       <section className="w-full bg-ivory text-background py-24 border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-4 md:px-6">
-          <Reveal variant="up" className="mb-16">
-            <p className="font-geist text-xs text-background/60 uppercase tracking-widest mb-4 font-bold">
-              The Arsenal
-            </p>
-            <h2 className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight">
-              Train.
-            </h2>
-          </Reveal>
+          <div className="mb-16 flex flex-col gap-4">
+            <div className="overflow-hidden">
+              <motion.p 
+                initial={{ y: "100%" }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="font-geist text-xs text-background/60 uppercase tracking-widest font-bold m-0"
+              >
+                The Arsenal
+              </motion.p>
+            </div>
+            <div className="overflow-hidden py-2">
+              <motion.h2 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={{
+                  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
+                }}
+                className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight m-0"
+              >
+                <div className="overflow-hidden inline-block">
+                  <motion.span
+                    variants={{
+                      hidden: { y: "100%" },
+                      visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                    }}
+                    className="inline-block"
+                  >
+                    Train.
+                  </motion.span>
+                </div>
+              </motion.h2>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Strength */}
@@ -125,14 +153,42 @@ export default function Facilities() {
       {/* Recover Section - Editorial Visuals */}
       <section className="w-full bg-background text-on-background py-24 border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-4 md:px-6">
-          <Reveal variant="up" className="mb-16">
-            <p className="font-geist text-xs text-on-background/60 uppercase tracking-widest mb-4 font-bold">
-              Regeneration
-            </p>
-            <h2 className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-on-background uppercase leading-none font-extrabold tracking-tight">
-              Recover.
-            </h2>
-          </Reveal>
+          <div className="mb-16 flex flex-col gap-4">
+            <div className="overflow-hidden">
+              <motion.p 
+                initial={{ y: "100%" }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="font-geist text-xs text-on-background/60 uppercase tracking-widest font-bold m-0"
+              >
+                Regeneration
+              </motion.p>
+            </div>
+            <div className="overflow-hidden py-2">
+              <motion.h2 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={{
+                  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
+                }}
+                className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-on-background uppercase leading-none font-extrabold tracking-tight m-0"
+              >
+                <div className="overflow-hidden inline-block">
+                  <motion.span
+                    variants={{
+                      hidden: { y: "100%" },
+                      visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                    }}
+                    className="inline-block"
+                  >
+                    Recover.
+                  </motion.span>
+                </div>
+              </motion.h2>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Steam & Showers */}
@@ -171,14 +227,42 @@ export default function Facilities() {
       {/* Experience Section - Editorial Visuals */}
       <section className="w-full bg-ivory text-background py-24 border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-4 md:px-6">
-          <Reveal variant="up" className="mb-16">
-            <p className="font-geist text-xs text-background/60 uppercase tracking-widest mb-4 font-bold">
-              The Space
-            </p>
-            <h2 className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight">
-              Experience.
-            </h2>
-          </Reveal>
+          <div className="mb-16 flex flex-col gap-4">
+            <div className="overflow-hidden">
+              <motion.p 
+                initial={{ y: "100%" }}
+                whileInView={{ y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="font-geist text-xs text-background/60 uppercase tracking-widest font-bold m-0"
+              >
+                The Space
+              </motion.p>
+            </div>
+            <div className="overflow-hidden py-2">
+              <motion.h2 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={{
+                  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
+                }}
+                className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight m-0"
+              >
+                <div className="overflow-hidden inline-block">
+                  <motion.span
+                    variants={{
+                      hidden: { y: "100%" },
+                      visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                    }}
+                    className="inline-block"
+                  >
+                    Experience.
+                  </motion.span>
+                </div>
+              </motion.h2>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Reception */}
@@ -216,20 +300,78 @@ export default function Facilities() {
 
       {/* Final CTA */}
       <section className="w-full bg-surface-container-lowest border-t border-outline-variant py-24 md:py-32 text-center px-4 md:px-6">
-        <Reveal variant="scale">
-          <h2 className="font-syne text-[32px] md:text-[56px] text-on-background uppercase mb-8 max-w-4xl mx-auto leading-none font-extrabold tracking-tight">
-            Experience AlphaOne In Person.
-          </h2>
-          <p className="font-geist text-base md:text-lg text-on-surface-variant mb-12 max-w-xl mx-auto uppercase tracking-wider font-semibold">
-            Step onto the floor. Feel the environment.
-          </p>
-          <a
-            className="inline-flex btn-primary font-geist text-[12px] tracking-widest px-12 py-5 items-center justify-center font-bold"
-            href="/membership#trial"
+        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.15 } }
+            }}
+            className="mb-8 w-full flex flex-col items-center gap-2"
           >
-            BOOK FREE TRIAL
-          </a>
-        </Reveal>
+            <div className="overflow-hidden w-full">
+              <motion.h2 
+                variants={{
+                  hidden: { y: "100%" },
+                  visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="font-syne text-[30px] md:text-[64px] lg:text-[80px] text-on-background uppercase max-w-4xl mx-auto leading-none font-extrabold tracking-tight"
+              >
+                EXPERIENCE
+              </motion.h2>
+            </div>
+            <div className="overflow-hidden w-full">
+              <motion.h2 
+                variants={{
+                  hidden: { y: "100%" },
+                  visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="font-syne text-[30px] md:text-[64px] lg:text-[80px] text-on-background uppercase max-w-4xl mx-auto leading-none font-extrabold tracking-tight"
+              >
+                ALPHAONE IN
+              </motion.h2>
+            </div>
+            <div className="overflow-hidden w-full">
+              <motion.h2 
+                variants={{
+                  hidden: { y: "100%" },
+                  visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="font-syne text-[30px] md:text-[64px] lg:text-[80px] text-on-background uppercase max-w-4xl mx-auto leading-none font-extrabold tracking-tight"
+              >
+                PERSON.
+              </motion.h2>
+            </div>
+          </motion.div>
+          
+          <div className="overflow-hidden mb-12 w-full">
+            <motion.p 
+              initial={{ opacity: 1, y: "100%" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="font-geist text-sm md:text-lg text-on-surface-variant max-w-xl mx-auto uppercase tracking-wider font-semibold"
+            >
+              Step onto the floor. Feel the environment.
+            </motion.p>
+          </div>
+          <div className="overflow-hidden">
+            <motion.div
+              initial={{ opacity: 1, y: "100%" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <a
+                className="inline-flex btn-primary font-geist text-[12px] tracking-widest px-12 py-5 items-center justify-center font-bold"
+                href="/membership#trial"
+              >
+                BOOK FREE TRIAL
+              </a>
+            </motion.div>
+          </div>
+        </div>
       </section>
     </div>
   );

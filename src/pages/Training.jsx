@@ -122,14 +122,34 @@ export default function Training() {
       {/* Program Overview (Bento Grid) */}
       <section className="py-24 px-4 md:px-6 max-w-container-max mx-auto brutalist-border-bottom" id="arsenal">
         <div className="mb-16 flex justify-between items-end border-b border-outline-variant/30 pb-6">
-          <Reveal variant="left">
-            <h2 className="font-syne text-[32px] md:text-[56px] text-ivory uppercase font-extrabold tracking-tight">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.15 } },
+              hidden: {}
+            }}
+          >
+            <motion.h2 
+              variants={{
+                hidden: { opacity: 0, x: -50 },
+                visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+              }}
+              className="font-syne text-[32px] md:text-[56px] text-ivory uppercase font-extrabold tracking-tight"
+            >
               THE ARSENAL
-            </h2>
-            <p className="font-geist text-sm md:text-base text-tertiary max-w-md mt-2">
+            </motion.h2>
+            <motion.p 
+              variants={{
+                hidden: { opacity: 0, x: -50 },
+                visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+              }}
+              className="font-geist text-sm md:text-base text-tertiary max-w-md mt-2"
+            >
               Our core training pillars designed for complete athletic development.
-            </p>
-          </Reveal>
+            </motion.p>
+          </motion.div>
           <Reveal variant="right" className="hidden md:block">
             <span className="material-symbols-outlined text-4xl text-accent">fitness_center</span>
           </Reveal>
@@ -177,54 +197,189 @@ export default function Training() {
       {/* Detail Section */}
       <section className="py-24 px-4 md:px-6 max-w-container-max mx-auto brutalist-border-bottom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <Reveal variant="left" className="order-2 lg:order-1">
-            <h2 className="font-syne text-[32px] md:text-[56px] text-ivory uppercase mb-10 font-extrabold leading-[0.9] tracking-tight">
-              PERSONAL<br />
-              TRAINING
-            </h2>
-            <div className="mb-8">
-              <h3 className="font-geist text-xs text-accent uppercase mb-2 tracking-widest font-bold">WHAT IT IS</h3>
-              <p className="font-geist text-base text-tertiary leading-relaxed">
+          <div className="order-2 lg:order-1">
+            <motion.h2 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
+              className="font-syne text-[32px] md:text-[56px] text-ivory uppercase mb-10 font-extrabold leading-[0.9] tracking-tight flex flex-col"
+            >
+              <motion.span 
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                }}
+              >
+                PERSONAL
+              </motion.span>
+              <motion.span 
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                }}
+              >
+                TRAINING
+              </motion.span>
+            </motion.h2>
+
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
+              className="mb-8"
+            >
+              <motion.h3 
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="font-geist text-xs text-accent uppercase mb-2 tracking-widest font-bold"
+              >WHAT IT IS</motion.h3>
+              <motion.p 
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="font-geist text-base text-tertiary leading-relaxed"
+              >
                 Bespoke programming tailored to your specific biomechanics and performance objectives. Our elite coaches
                 are technicians of the human body, providing uncompromising 1-on-1 guidance.
-              </p>
-            </div>
-            <div className="mb-8">
-              <h3 className="font-geist text-xs text-accent uppercase mb-2 tracking-widest font-bold">WHO IT'S FOR</h3>
-              <p className="font-geist text-base text-tertiary leading-relaxed">
+              </motion.p>
+            </motion.div>
+
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
+              className="mb-8"
+            >
+              <motion.h3 
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="font-geist text-xs text-accent uppercase mb-2 tracking-widest font-bold"
+              >WHO IT'S FOR</motion.h3>
+              <motion.p 
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="font-geist text-base text-tertiary leading-relaxed"
+              >
                 Athletes, beginners, and individuals seeking maximum results, specialized attention, injury
                 rehabilitation, or complete accountability in their fitness journey.
-              </p>
-            </div>
-            <div className="mb-10">
-              <h3 className="font-geist text-xs text-accent uppercase mb-4 tracking-widest font-bold">BENEFITS</h3>
+              </motion.p>
+            </motion.div>
+
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+              className="mb-10"
+            >
+              <motion.h3 
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="font-geist text-xs text-accent uppercase mb-4 tracking-widest font-bold"
+              >BENEFITS</motion.h3>
               <ul className="space-y-3 font-geist text-sm text-tertiary">
                 <li className="flex items-start">
-                  <span className="material-symbols-outlined text-accent mr-3 mt-0.5">check_circle</span>
-                  <span>Comprehensive Biomechanical Assessment</span>
+                  <motion.span 
+                    variants={{
+                      hidden: { scale: 0, opacity: 0 },
+                      visible: { scale: 1, opacity: 1, transition: { duration: 1.2, ease: [0.34, 1.56, 0.64, 1] } }
+                    }}
+                    className="block material-symbols-outlined text-accent mr-3 mt-0.5"
+                  >check_circle</motion.span>
+                  <div className="overflow-hidden">
+                    <motion.span 
+                      variants={{
+                        hidden: { y: "150%" },
+                        visible: { y: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                      }}
+                      className="block"
+                    >Comprehensive Biomechanical Assessment</motion.span>
+                  </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="material-symbols-outlined text-accent mr-3 mt-0.5">check_circle</span>
-                  <span>Data-Driven Progress Tracking</span>
+                  <motion.span 
+                    variants={{
+                      hidden: { scale: 0, opacity: 0 },
+                      visible: { scale: 1, opacity: 1, transition: { duration: 1.2, ease: [0.34, 1.56, 0.64, 1] } }
+                    }}
+                    className="block material-symbols-outlined text-accent mr-3 mt-0.5"
+                  >check_circle</motion.span>
+                  <div className="overflow-hidden">
+                    <motion.span 
+                      variants={{
+                        hidden: { y: "150%" },
+                        visible: { y: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                      }}
+                      className="block"
+                    >Data-Driven Progress Tracking</motion.span>
+                  </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="material-symbols-outlined text-accent mr-3 mt-0.5">check_circle</span>
-                  <span>Nutritional Optimization Strategies</span>
+                  <motion.span 
+                    variants={{
+                      hidden: { scale: 0, opacity: 0 },
+                      visible: { scale: 1, opacity: 1, transition: { duration: 1.2, ease: [0.34, 1.56, 0.64, 1] } }
+                    }}
+                    className="block material-symbols-outlined text-accent mr-3 mt-0.5"
+                  >check_circle</motion.span>
+                  <div className="overflow-hidden">
+                    <motion.span 
+                      variants={{
+                        hidden: { y: "150%" },
+                        visible: { y: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                      }}
+                      className="block"
+                    >Nutritional Optimization Strategies</motion.span>
+                  </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="material-symbols-outlined text-accent mr-3 mt-0.5">check_circle</span>
-                  <span>Injury Prevention & Corrective Exercise</span>
+                  <motion.span 
+                    variants={{
+                      hidden: { scale: 0, opacity: 0 },
+                      visible: { scale: 1, opacity: 1, transition: { duration: 1.2, ease: [0.34, 1.56, 0.64, 1] } }
+                    }}
+                    className="block material-symbols-outlined text-accent mr-3 mt-0.5"
+                  >check_circle</motion.span>
+                  <div className="overflow-hidden">
+                    <motion.span 
+                      variants={{
+                        hidden: { y: "150%" },
+                        visible: { y: 0, transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }
+                      }}
+                      className="block"
+                    >Injury Prevention & Corrective Exercise</motion.span>
+                  </div>
                 </li>
               </ul>
-            </div>
-            <a
+            </motion.div>
+            
+            <motion.a
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{
+                hidden: { scale: 0, opacity: 0 },
+                visible: { scale: 1, opacity: 1, transition: { duration: 1.2, ease: [0.34, 1.56, 0.64, 1] } }
+              }}
               href="#coaches"
               onClick={(e) => e.preventDefault()}
               className="btn-slide-fill inline-block bg-ivory text-black font-geist text-[12px] tracking-widest px-8 py-4 transition-colors duration-300 font-bold uppercase cursor-pointer"
             >
               MEET THE COACHES
-            </a>
-          </Reveal>
+            </motion.a>
+          </div>
 
           <Reveal variant="right" className="order-1 lg:order-2 relative">
             <div className="brutalist-border p-2 w-full aspect-[3/4]">

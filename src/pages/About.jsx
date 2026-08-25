@@ -74,7 +74,7 @@ export default function About() {
             
             <div className="md:col-span-8 lg:col-span-8 flex flex-col gap-6">
               <Reveal variant="right">
-                <h2 className="font-syne text-[36px] md:text-[48px] lg:text-[56px] text-on-background uppercase leading-tight font-extrabold tracking-tight">
+                <h2 className="font-syne text-[32px] md:text-[48px] lg:text-[56px] text-on-background uppercase leading-tight font-extrabold tracking-tight">
                   <span style={{ WebkitTextStroke: '1px var(--color-accent, #F05236)', color: 'transparent' }}>NO</span> SHORTCUTS.<br />
                   <span style={{ WebkitTextStroke: '1px var(--color-accent, #F05236)', color: 'transparent' }}>ONLY</span> DISCIPLINE.
                 </h2>
@@ -164,37 +164,77 @@ export default function About() {
         </div>
 
         <div className="relative z-20 max-w-container-max mx-auto px-4 md:px-6">
-          <Reveal variant="right" className="bg-surface-container-lowest/90 backdrop-blur-md brutalist-border p-10 md:p-20 max-w-4xl md:ml-auto w-full">
-            <span className="font-geist text-xs text-accent uppercase mb-6 block border-l-2 border-accent pl-4 font-bold tracking-widest">
-              WHY ALPHAONE
-            </span>
-            <h2 className="font-syne text-[32px] md:text-[56px] text-on-background mb-6 uppercase leading-tight font-extrabold tracking-tight">
-              FORGED BY<br />
-              THE ELITE.
-            </h2>
-            <p className="font-geist text-sm md:text-base text-on-surface-variant leading-relaxed">
-              Founded by industry veterans who demanded more from a training environment. Alphaone was built as a
-              sanctuary for the dedicated. No distractions. No compromises. Just premium equipment, elite coaching, and
-              an atmosphere that demands your absolute best the moment you step through the doors.
-            </p>
-          </Reveal>
+          <div className="bg-surface-container-lowest/90 backdrop-blur-md brutalist-border p-10 md:p-20 max-w-4xl md:ml-auto w-full">
+            <div className="overflow-hidden mb-6">
+              <motion.span 
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="font-geist text-xs text-accent uppercase block border-l-2 border-accent pl-4 font-bold tracking-widest"
+              >
+                WHY ALPHAONE
+              </motion.span>
+            </div>
+            <div className="overflow-hidden mb-6">
+              <motion.h2 
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="font-syne text-[32px] md:text-[56px] text-on-background uppercase leading-tight font-extrabold tracking-tight"
+              >
+                FORGED BY<br />
+                THE ELITE.
+              </motion.h2>
+            </div>
+            <div className="overflow-hidden">
+              <motion.p 
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="font-geist text-sm md:text-base text-on-surface-variant leading-relaxed"
+              >
+                Founded by industry veterans who demanded more from a training environment. Alphaone was built as a
+                sanctuary for the dedicated. No distractions. No compromises. Just premium equipment, elite coaching, and
+                an atmosphere that demands your absolute best the moment you step through the doors.
+              </motion.p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Who We Are */}
       <section className="py-24 px-4 md:px-6 brutalist-border-bottom max-w-container-max mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
-          <Reveal variant="left" className="md:col-span-5 md:col-start-2">
-            <h2 className="font-syne text-[32px] md:text-[56px] text-on-background mb-6 uppercase leading-tight font-extrabold tracking-tight">
-              Serious Training<br />
-              For Serious People.
-            </h2>
-            <p className="font-geist text-sm md:text-base text-on-surface-variant mb-10 max-w-lg leading-relaxed">
-              We are not a social club. We are a performance facility. Our environment is curated to filter out the
-              noise and amplify focus. From Hyrox-inspired conditioning to heavy barbell mechanics, everything here
-              serves a singular purpose: progression.
-            </p>
-          </Reveal>
+          <div className="md:col-span-5 md:col-start-2">
+            <div className="overflow-hidden mb-6">
+              <motion.h2 
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="font-syne text-[32px] md:text-[56px] text-on-background uppercase leading-tight font-extrabold tracking-tight"
+              >
+                Serious Training<br />
+                For Serious People.
+              </motion.h2>
+            </div>
+            <div className="overflow-hidden mb-10 max-w-lg">
+              <motion.p 
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="font-geist text-sm md:text-base text-on-surface-variant leading-relaxed"
+              >
+                We are not a social club. We are a performance facility. Our environment is curated to filter out the
+                noise and amplify focus. From Hyrox-inspired conditioning to heavy barbell mechanics, everything here
+                serves a singular purpose: progression.
+              </motion.p>
+            </div>
+          </div>
           <Reveal variant="right" className="md:col-span-6 relative h-[600px] brutalist-border">
             <img
               className="w-full h-full object-cover grayscale contrast-125 brightness-75 brutalist-border"
@@ -248,24 +288,44 @@ export default function About() {
         <div className="absolute inset-0 w-full h-full opacity-5 pointer-events-none flex justify-center items-center">
           <span className="material-symbols-outlined text-[300px] text-accent">electric_bolt</span>
         </div>
-        <Reveal variant="scale" className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
-          <h2 className="font-syne text-[32px] md:text-[56px] text-on-background mb-6 uppercase leading-tight font-extrabold tracking-tight">
-            YOUR GOALS.<br />
-            EXPERTLY GUIDED.
-          </h2>
-          <p className="font-geist text-base md:text-lg text-on-surface-variant mb-10 max-w-xl leading-relaxed">
-            We provide the blueprint, the tools, and the environment. You bring the unrelenting will to execute.
-          </p>
-          <a
-            href="/membership#trial"
-            className="inline-flex btn-primary font-geist text-[12px] tracking-widest px-10 py-5 items-center gap-4 group font-bold"
+        <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+          <div className="overflow-hidden mb-6">
+            <motion.h2 
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+              className="font-syne text-[32px] md:text-[56px] text-on-background uppercase leading-tight font-extrabold tracking-tight text-center"
+            >
+              YOUR GOALS.<br />
+              EXPERTLY GUIDED.
+            </motion.h2>
+          </div>
+          <div className="overflow-hidden mb-10 max-w-xl">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="font-geist text-base md:text-lg text-on-surface-variant leading-relaxed text-center"
+            >
+              We provide the blueprint, the tools, and the environment. You bring the unrelenting will to execute.
+            </motion.p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
           >
-            JOIN THE PACK
-            <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform">
-              arrow_forward
-            </span>
-          </a>
-        </Reveal>
+            <a
+              href="/membership#trial"
+              className="btn-slide-fill font-geist text-[12px] tracking-[0.2em] text-accent border border-accent/40 px-8 py-4 transition-all flex items-center gap-2 font-bold uppercase w-fit bg-surface-container"
+            >
+              START YOUR TRIAL <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </motion.div>
+        </div>
       </section>
     </div>
   );

@@ -30,7 +30,12 @@ function FaqItem({ question, answer, delay }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Reveal variant="up" delay={delay}>
+    <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, delay: delay / 1000, ease: [0.22, 1, 0.36, 1] }}
+    >
       <div className="bg-surface-container border border-outline-variant">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -49,7 +54,7 @@ function FaqItem({ question, answer, delay }) {
           </div>
         </div>
       </div>
-    </Reveal>
+    </motion.div>
   );
 }
 
@@ -145,7 +150,7 @@ export default function Membership() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h1 className="font-syne text-[34px] md:text-[64px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-on-background uppercase mb-4 tracking-tighter font-extrabold leading-none" style={{ perspective: '1000px' }}>
+            <h1 className="font-syne text-[30px] md:text-[64px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-on-background uppercase mb-4 tracking-tighter font-extrabold leading-none" style={{ perspective: '1000px' }}>
               <span className="block">
                 {"Membership".split(" ").map((w,i) => <motion.span key={i} variants={lineRevealVariants} className="inline-block mr-[0.25em] origin-bottom">{w}</motion.span>)}
               </span>
@@ -153,7 +158,7 @@ export default function Membership() {
                 {"Plans".split(" ").map((w,i) => <motion.span key={i} variants={lineRevealVariants} className="inline-block mr-[0.25em] origin-bottom">{w}</motion.span>)}
               </span>
             </h1>
-            <motion.p variants={itemVariants} className="font-geist text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto uppercase tracking-widest border-t border-b border-outline-variant/30 py-4">
+            <motion.p variants={itemVariants} className="font-geist text-[15px] md:text-lg text-on-surface-variant max-w-2xl mx-auto uppercase tracking-widest border-t border-b border-outline-variant/30 py-4">
               Elite performance. Uncompromising discipline.
             </motion.p>
           </motion.div>
@@ -162,15 +167,28 @@ export default function Membership() {
 
       {/* Membership Cards */}
       <section className="py-16 md:py-24 px-4 md:px-6 max-w-container-max mx-auto w-full" id="trial">
-        <Reveal variant="up" className="text-center mb-16">
-          <h2 className="font-syne text-[32px] md:text-[56px] uppercase tracking-tight text-on-background font-extrabold">
+        <div className="overflow-hidden pb-2 mb-16 text-center">
+          <motion.h2 
+            initial={{ y: "100%" }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="font-syne text-[32px] md:text-[56px] uppercase tracking-tight text-on-background font-extrabold m-0"
+          >
             Choose Your Tier
-          </h2>
-        </Reveal>
+          </motion.h2>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {tiers.map((tier, idx) => (
-            <Reveal key={idx} variant="up" delay={idx * 150} className="h-full">
+            <motion.div 
+              key={idx} 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="h-full"
+            >
               <div
                 className={`p-8 flex flex-col h-full transition-all duration-300 border ${
                   tier.isPopular
@@ -198,7 +216,7 @@ export default function Membership() {
                   ))}
                 </ul>
                 <button
-                  className={`w-full font-geist text-[12px] tracking-widest py-4 uppercase font-bold transition-all border ${
+                  className={`w-full font-geist text-[12px] tracking-widest py-4 uppercase font-bold transition-all border cursor-pointer ${
                     tier.isPopular
                       ? 'bg-accent text-white hover:bg-background hover:text-accent border-accent'
                       : 'bg-secondary-fixed text-on-secondary-fixed hover:bg-surface-bright hover:text-on-background border-transparent'
@@ -207,7 +225,7 @@ export default function Membership() {
                   View Plan
                 </button>
               </div>
-            </Reveal>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -220,10 +238,13 @@ export default function Membership() {
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
       >
-        <motion.div variants={tableRowVariants} className="text-center mb-12">
-          <h2 className="font-syne text-[32px] md:text-[56px] uppercase tracking-tight text-on-background font-extrabold">
+        <motion.div variants={tableRowVariants} className="overflow-hidden pb-2 mb-12 text-center">
+          <motion.h2 
+            variants={{ hidden: { y: "100%" }, visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
+            className="font-syne text-[32px] md:text-[56px] uppercase tracking-tight text-on-background font-extrabold m-0"
+          >
             Compare Benefits
-          </h2>
+          </motion.h2>
         </motion.div>
 
         <motion.div variants={tableWrapperVariants} className="overflow-x-auto border border-outline-variant bg-surface-container p-8">
@@ -294,11 +315,17 @@ export default function Membership() {
 
       {/* FAQ Accordion */}
       <section className="py-16 md:py-24 px-4 md:px-6 max-w-3xl mx-auto w-full border-t border-outline-variant/30">
-        <Reveal variant="up" className="text-center mb-12">
-          <h2 className="font-syne text-[32px] md:text-[56px] uppercase tracking-tight text-on-background font-extrabold">
+        <div className="overflow-hidden pb-2 mb-12 text-center">
+          <motion.h2 
+            initial={{ y: "100%" }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="font-syne text-[32px] md:text-[56px] uppercase tracking-tight text-on-background font-extrabold m-0"
+          >
             FAQ
-          </h2>
-        </Reveal>
+          </motion.h2>
+        </div>
         <div className="space-y-4">
           <FaqItem
             question="What is the cancellation policy?"
@@ -321,31 +348,76 @@ export default function Membership() {
       {/* Pre-Sale Announcement / Conversion Block */}
       <section className="w-full bg-accent text-white py-16 border-t border-outline-variant/30">
         <div className="w-full max-w-container-max mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <Reveal variant="left" className="flex flex-col items-center md:items-start gap-2">
-            <div className="flex items-center gap-4 mb-2">
-              <span className="hidden md:inline-block">
-                <span className="material-symbols-outlined text-4xl text-white">campaign</span>
-              </span>
-              <h2 className="font-syne text-3xl uppercase tracking-tight font-extrabold">Ready to Start?</h2>
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.15 } }
+            }}
+            className="flex flex-col items-center md:items-start gap-2"
+          >
+            <div className="overflow-hidden">
+              <motion.div 
+                variants={{
+                  hidden: { y: "100%" },
+                  visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="flex items-center gap-4 mb-2"
+              >
+                <span className="hidden md:inline-block">
+                  <span className="material-symbols-outlined text-4xl text-white">campaign</span>
+                </span>
+                <h2 className="font-syne text-3xl uppercase tracking-tight font-extrabold">Ready to Start?</h2>
+              </motion.div>
             </div>
-            <p className="font-geist text-sm text-white/80">Book a trial or chat with our team today.</p>
-          </Reveal>
-          <Reveal variant="right" className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <button className="btn-slide-fill-surface bg-white text-accent font-geist text-[12px] tracking-widest px-8 py-4 transition-colors font-bold uppercase w-full sm:w-auto cursor-pointer">
-              BOOK FREE TRIAL
-            </button>
-            <a
-              href="https://wa.me/918692020755?text=Hi%20AlphaOne%20Team%2C%20I'm%20interested%20in%20joining%20the%20club%21"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-slide-fill-white bg-transparent text-white font-geist text-[12px] tracking-widest px-8 py-4 transition-colors duration-300 uppercase border border-white w-full sm:w-auto flex items-center justify-center gap-2 font-bold"
+            <div className="overflow-hidden">
+              <motion.p 
+                variants={{
+                  hidden: { y: "100%" },
+                  visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="font-geist text-sm text-white/80 m-0"
+              >
+                Book a trial or chat with our team today.
+              </motion.p>
+            </div>
+          </motion.div>
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
+            }}
+            className="flex flex-col sm:flex-row gap-4 w-full md:w-auto"
+          >
+            <motion.div
+              variants={{
+                hidden: { scale: 0.5, opacity: 0 },
+                visible: { scale: 1, opacity: 1, transition: { duration: 0.8, ease: [0.34, 1.56, 0.64, 1] } }
+              }}
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19.001 4.908A9.817 9.817 0 0 0 11.992 2C6.534 2 2.085 6.448 2.08 11.908c0 1.748.458 3.45 1.321 4.956L2 22l5.251-1.378a9.804 9.804 0 0 0 4.73 1.206h.004c5.457 0 9.905-4.448 9.91-9.913a9.813 9.813 0 0 0-2.894-7.007zm-7.009 15.241a8.166 8.166 0 0 1-4.163-1.144l-.298-.177-3.1 1.057.828-3.023-.195-.31a8.178 8.178 0 0 1-1.253-4.343c.004-4.506 3.673-8.178 8.185-8.178a8.18 8.18 0 0 1 5.79 2.401 8.176 8.176 0 0 1 2.396 5.8c-.004 4.51-3.678 8.182-8.187 8.182zm4.492-6.14c-.247-.124-1.458-.72-1.685-.803-.228-.081-.393-.124-.559.124-.166.247-.64.803-.784.965-.145.166-.29.185-.538.062a6.786 6.786 0 0 1-1.999-1.233 7.465 7.465 0 0 1-1.385-1.722c-.145-.247-.015-.382.11-.505.112-.11.247-.29.372-.434.124-.145.166-.247.247-.412.081-.166.041-.31-.02-.434-.062-.124-.559-1.348-.765-1.843-.2-.486-.403-.42-.559-.428-.145-.008-.31-.008-.475-.008-.166 0-.435.062-.662.31-.228.247-.868.847-.868 2.065 0 1.218.889 2.395.989 2.535.1.141 1.75 2.673 4.241 3.746.593.256 1.056.408 1.417.523.595.19 1.137.163 1.565.101.477-.07 1.458-.597 1.665-1.173.207-.577.207-1.073.145-1.173-.062-.1-.228-.166-.475-.29z"/>
-              </svg>
-              WHATSAPP
-            </a>
-          </Reveal>
+              <button className="btn-slide-fill-surface bg-white text-accent font-geist text-[12px] tracking-widest px-8 py-4 transition-colors font-bold uppercase w-full sm:w-auto cursor-pointer h-full">
+                BOOK FREE TRIAL
+              </button>
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { scale: 0.5, opacity: 0 },
+                visible: { scale: 1, opacity: 1, transition: { duration: 0.8, ease: [0.34, 1.56, 0.64, 1] } }
+              }}
+            >
+              <a
+                href="https://wa.me/918692020755?text=Hi%20AlphaOne%20Team%2C%20I'm%20interested%20in%20joining%20the%20club%21"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-slide-fill-white bg-transparent text-white font-geist text-[12px] tracking-widest px-8 py-4 transition-colors duration-300 uppercase border border-white w-full sm:w-auto flex items-center justify-center gap-2 font-bold h-full"
+              >
+                <i className="ri-whatsapp-fill text-lg"></i> WHATSAPP US
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>
