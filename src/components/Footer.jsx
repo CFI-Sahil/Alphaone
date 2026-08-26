@@ -194,7 +194,7 @@ export default function Footer() {
           <div className="mt-8 border-t border-outline-variant/30 pt-6">
             <div className="overflow-hidden">
               <motion.p variants={maskReveal} className="font-geist text-[10px] text-on-surface-variant uppercase tracking-widest opacity-60">
-                © 2024 ALPHAONE FITNESS CLUB. ALL RIGHTS RESERVED. PRECISION PERFORMANCE.
+                © 2026 ALPHAONE FITNESS CLUB. ALL RIGHTS RESERVED. PRECISION PERFORMANCE.
               </motion.p>
             </div>
           </div>

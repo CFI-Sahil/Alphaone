@@ -43,7 +43,7 @@ export default function Facilities() {
           <div className="absolute inset-0 brutalist-grid-overlay z-15 pointer-events-none"></div>
         </div>
         <div className="relative z-10 text-center px-4 md:px-6 flex flex-col items-center">
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -51,7 +51,7 @@ export default function Facilities() {
           >
             <h1 className="font-syne text-[36px] md:text-[64px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-on-background uppercase mb-4 drop-shadow-2xl font-extrabold tracking-tight" style={{ perspective: '1000px' }}>
               <span className="block">
-                {"Step Inside.".split(" ").map((w,i) => <motion.span key={i} variants={lineRevealVariants} className="inline-block mr-[0.25em] origin-bottom">{w}</motion.span>)}
+                {"Step Inside.".split(" ").map((w, i) => <motion.span key={i} variants={lineRevealVariants} className="inline-block mr-[0.25em] origin-bottom">{w}</motion.span>)}
               </span>
             </h1>
             <motion.p variants={itemVariants} className="font-geist text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto uppercase tracking-widest leading-relaxed">
@@ -66,7 +66,7 @@ export default function Facilities() {
         <div className="max-w-container-max mx-auto px-4 md:px-6">
           <div className="mb-16 flex flex-col gap-4">
             <div className="overflow-hidden">
-              <motion.p 
+              <motion.p
                 initial={{ y: "100%" }}
                 whileInView={{ y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -77,14 +77,14 @@ export default function Facilities() {
               </motion.p>
             </div>
             <div className="overflow-hidden py-2">
-              <motion.h2 
+              <motion.h2
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 variants={{
                   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
                 }}
-                className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight m-0"
+                className="font-syne text-[32px] md:text-[60px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight m-0"
               >
                 <div className="overflow-hidden inline-block">
                   <motion.span
@@ -101,7 +101,7 @@ export default function Facilities() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Strength */}
             <Reveal variant="up" delay={0}>
               <div className="group relative aspect-[3/4] overflow-hidden brutalist-border border-background/20 bg-background/5">
@@ -155,7 +155,7 @@ export default function Facilities() {
         <div className="max-w-container-max mx-auto px-4 md:px-6">
           <div className="mb-16 flex flex-col gap-4">
             <div className="overflow-hidden">
-              <motion.p 
+              <motion.p
                 initial={{ y: "100%" }}
                 whileInView={{ y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -166,14 +166,14 @@ export default function Facilities() {
               </motion.p>
             </div>
             <div className="overflow-hidden py-2">
-              <motion.h2 
+              <motion.h2
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 variants={{
                   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
                 }}
-                className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-on-background uppercase leading-none font-extrabold tracking-tight m-0"
+                className="font-syne text-[32px] md:text-[60px] lg:text-[96px] text-on-background uppercase leading-none font-extrabold tracking-tight m-0"
               >
                 <div className="overflow-hidden inline-block">
                   <motion.span
@@ -190,7 +190,7 @@ export default function Facilities() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Steam & Showers */}
             <Reveal variant="left">
               <div className="group relative aspect-square md:aspect-[4/3] overflow-hidden brutalist-border border-on-background/20">
@@ -229,7 +229,7 @@ export default function Facilities() {
         <div className="max-w-container-max mx-auto px-4 md:px-6">
           <div className="mb-16 flex flex-col gap-4">
             <div className="overflow-hidden">
-              <motion.p 
+              <motion.p
                 initial={{ y: "100%" }}
                 whileInView={{ y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -240,14 +240,14 @@ export default function Facilities() {
               </motion.p>
             </div>
             <div className="overflow-hidden py-2">
-              <motion.h2 
+              <motion.h2
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 variants={{
                   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
                 }}
-                className="font-syne text-[32px] md:text-[80px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight m-0"
+                className="font-syne text-[32px] md:text-[60px] lg:text-[96px] text-background uppercase leading-none font-extrabold tracking-tight m-0"
               >
                 <div className="overflow-hidden inline-block">
                   <motion.span
@@ -264,7 +264,7 @@ export default function Facilities() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Reception */}
             <Reveal variant="left">
               <div className="group relative aspect-square md:aspect-[4/3] overflow-hidden brutalist-border border-background/20 bg-background/5">
@@ -301,7 +301,7 @@ export default function Facilities() {
       {/* Final CTA */}
       <section className="w-full bg-surface-container-lowest border-t border-outline-variant py-24 md:py-32 text-center px-4 md:px-6">
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -311,42 +311,42 @@ export default function Facilities() {
             className="mb-8 w-full flex flex-col items-center gap-2"
           >
             <div className="overflow-hidden w-full">
-              <motion.h2 
+              <motion.h2
                 variants={{
                   hidden: { y: "100%" },
                   visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="font-syne text-[30px] md:text-[64px] lg:text-[80px] text-on-background uppercase max-w-4xl mx-auto leading-none font-extrabold tracking-tight"
+                className="font-syne text-[30px] md:text-[56px] lg:text-[80px] text-on-background uppercase max-w-4xl mx-auto leading-none font-extrabold tracking-tight"
               >
                 EXPERIENCE
               </motion.h2>
             </div>
             <div className="overflow-hidden w-full">
-              <motion.h2 
+              <motion.h2
                 variants={{
                   hidden: { y: "100%" },
                   visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="font-syne text-[30px] md:text-[64px] lg:text-[80px] text-on-background uppercase max-w-4xl mx-auto leading-none font-extrabold tracking-tight"
+                className="font-syne text-[30px] md:text-[56px] lg:text-[80px] text-on-background uppercase max-w-4xl mx-auto leading-none font-extrabold tracking-tight"
               >
                 ALPHAONE IN
               </motion.h2>
             </div>
             <div className="overflow-hidden w-full">
-              <motion.h2 
+              <motion.h2
                 variants={{
                   hidden: { y: "100%" },
                   visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="font-syne text-[30px] md:text-[64px] lg:text-[80px] text-on-background uppercase max-w-4xl mx-auto leading-none font-extrabold tracking-tight"
+                className="font-syne text-[30px] md:text-[56px] lg:text-[80px] text-on-background uppercase max-w-4xl mx-auto leading-none font-extrabold tracking-tight"
               >
                 PERSON.
               </motion.h2>
             </div>
           </motion.div>
-          
+
           <div className="overflow-hidden mb-12 w-full">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 1, y: "100%" }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}

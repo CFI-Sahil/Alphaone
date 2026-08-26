@@ -88,7 +88,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item, index) => (
               <div key={item.name} className="overflow-hidden py-1 -my-1">
                 <motion.div
@@ -116,7 +116,7 @@ export default function Navbar() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden sm:block"
+              className="hidden lg:block"
             >
               <Link
                 to="/membership#trial"
@@ -130,7 +130,7 @@ export default function Navbar() {
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden"
+              className="lg:hidden"
             >
               <button
                 aria-label="Toggle Menu"
@@ -165,7 +165,7 @@ export default function Navbar() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 z-40 bg-[#0a0a0a] pt-20 text-white flex flex-col md:hidden overflow-hidden"
+            className="fixed inset-0 z-40 bg-[#0a0a0a] pt-20 text-white flex flex-col lg:hidden overflow-hidden"
           >
             {/* Subtle Background Logo */}
             <motion.div variants={logoVariants} className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden mix-blend-screen pt-20">

@@ -219,7 +219,7 @@ export default function Home() {
               <span className="w-4 h-[2px] bg-accent block shrink-0"></span>
               <span>ANDHERI WEST, MUMBAI <span className="mx-2 text-on-surface-variant">•</span> 4000 SQFT AREA</span>
             </motion.span>
-            <h1 className="font-syne text-[36px] md:text-[64px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-ivory uppercase leading-[0.9] tracking-tighter font-extrabold" style={{ perspective: '1000px' }}>
+            <h1 className="font-syne text-[36px] md:text-[60px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-ivory uppercase leading-[0.9] tracking-tighter font-extrabold" style={{ perspective: '1000px' }}>
               {/* Mobile View */}
               <span className="md:hidden flex flex-col gap-4">
                 <motion.span variants={lineRevealVariants} className="block origin-bottom">TRAIN HARD.</motion.span>
@@ -259,7 +259,7 @@ export default function Home() {
             <div className="max-w-5xl mx-auto bg-[#131313]/90 backdrop-blur-md border-y border-outline-variant/30 md:border md:border-outline-variant/30 p-0 md:py-5 md:px-6 shadow-2xl">
               
               {/* Desktop View */}
-              <div className="hidden md:flex flex-nowrap justify-between items-center gap-2 text-center font-geist text-on-surface-variant text-sm tracking-widest font-semibold uppercase">
+              <div className="hidden md:flex flex-nowrap justify-between items-center gap-2 text-center font-geist text-on-surface-variant text-xs tracking-widest font-semibold uppercase">
                 <div className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-accent text-lg">fitness_center</span>
                   <span>PREMIUM EQUIPMENT</span>
@@ -338,7 +338,7 @@ export default function Home() {
                   hidden: { y: "150%" },
                   visible: { y: 0, transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="font-syne text-[32px] md:text-[56px] text-ivory uppercase font-extrabold tracking-tight leading-none"
+                className="font-syne text-[32px] md:text-[52px] text-ivory uppercase font-extrabold tracking-tight leading-none"
               >
                 WHY TRAIN WITH US
               </motion.h2>
@@ -366,7 +366,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: (idx % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="h-full"
               >
-                <div className="relative overflow-hidden bg-surface-container-high p-8 border border-outline-variant hover:border-accent/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between h-full shadow-lg hover:shadow-black/50">
+                <div className="relative overflow-hidden bg-surface-container-high px-4 py-6 md:p-8 border border-outline-variant hover:border-accent/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between h-full shadow-lg hover:shadow-black/50">
                   <div>
                     {/* Header: Icon & Title Side-by-Side */}
                     <div className="flex items-center gap-4 mb-4">
@@ -426,7 +426,7 @@ export default function Home() {
                     hidden: { y: "150%" },
                     visible: { y: 0, transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } }
                   }}
-                  className="font-syne text-[32px] md:text-[56px] text-surface uppercase font-extrabold tracking-tight leading-none"
+                  className="font-syne text-[32px] md:text-[50px] text-surface uppercase font-extrabold tracking-tight leading-none"
                 >
                   TRAINING PROGRAMS
                 </motion.h2>
@@ -440,7 +440,7 @@ export default function Home() {
             >
               <button
                 onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-slide-fill font-geist text-[12px] tracking-[0.2em] text-accent border border-accent/40 px-4 py-3.5 transition-all flex items-center gap-2 font-bold uppercase w-fit whitespace-nowrap shrink-0"
+                className="btn-slide-fill font-geist text-[10px] tracking-[0.2em] text-accent border border-accent/40 px-4 py-3.5 transition-all flex items-center gap-2 font-bold uppercase w-fit whitespace-nowrap shrink-0"
               >
                 VIEW ALL PROGRAMS <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </button>
@@ -527,7 +527,7 @@ export default function Home() {
                     hidden: { x: "-100%" },
                     visible: { x: 0, transition: { duration: 1.4, ease: [0.22, 1, 0.36, 1] } }
                   }}
-                  className="font-syne text-[32px] md:text-[56px] text-white uppercase font-extrabold leading-none tracking-tight flex flex-col"
+                  className="font-syne text-[32px] md:text-[52px] text-white uppercase font-extrabold leading-none tracking-tight flex flex-col"
                 >
                   <motion.span variants={{
                     hidden: { x: "-100%" },
@@ -691,7 +691,7 @@ export default function Home() {
                   hidden: { y: "150%" },
                   visible: { y: 0, transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="font-syne text-[32px] md:text-[56px] text-ivory uppercase font-extrabold tracking-tight leading-none"
+                className="font-syne text-[32px] md:text-[52px] text-ivory uppercase font-extrabold tracking-tight leading-none"
               >
                 MEET THE COACHES
               </motion.h2>
@@ -777,7 +777,7 @@ export default function Home() {
                   hidden: { y: "150%" },
                   visible: { y: 0, transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="font-syne text-[32px] md:text-[56px] text-ivory uppercase font-extrabold tracking-tight leading-none"
+                className="font-syne text-[32px] md:text-[52px] text-ivory uppercase font-extrabold tracking-tight leading-none"
               >
                 MEMBERSHIP
               </motion.h2>
@@ -795,7 +795,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16 items-center">
             {/* Tier 1 */}
             <motion.div 
               initial={{ opacity: 0, y: 50 }}
@@ -1034,7 +1034,7 @@ export default function Home() {
                   hidden: { y: "150%" },
                   visible: { y: 0, transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="font-syne text-[32px] md:text-[56px] text-ivory uppercase font-extrabold tracking-tight leading-none"
+                className="font-syne text-[32px] md:text-[52px] text-ivory uppercase font-extrabold tracking-tight leading-none"
               >
                 FAQ
               </motion.h2>
@@ -1062,7 +1062,7 @@ export default function Home() {
       </section>
 
       {/* Split Location Section */}
-      <section className="bg-surface-container border-t border-outline-variant flex flex-col md:flex-row" id="contact">
+      <section className="bg-surface-container border-t border-outline-variant flex flex-col lg:flex-row" id="contact">
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -1071,7 +1071,7 @@ export default function Home() {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { duration: 1.2, ease: "easeOut", staggerChildren: 0.15, delayChildren: 0.2 } }
           }}
-          className="w-full md:w-1/2 px-4 py-16 md:p-12 lg:p-24 flex flex-col justify-center relative overflow-hidden"
+          className="w-full lg:w-1/2 px-4 py-16 md:p-12 lg:p-24 flex flex-col justify-center relative overflow-hidden"
         >
           {/* Brand Logo Watermark */}
           <img 
@@ -1202,7 +1202,7 @@ export default function Home() {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { duration: 1.5, ease: "easeOut" } }
           }}
-          className="w-full md:w-1/2 min-h-[400px] bg-surface relative brutalist-border group overflow-hidden"
+          className="w-full lg:w-1/2 min-h-[400px] bg-surface relative brutalist-border group overflow-hidden"
         >
           <a
             href="https://www.google.com/maps/search/?api=1&query=LG1%2C+Maplle+Morya+Classic+building%2C+Opposite+Infinity+mall%2C+beside+What%27s+your+Bahana%2C+Andheri+West%2C+Mumbai"

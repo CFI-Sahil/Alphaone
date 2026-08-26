@@ -65,28 +65,54 @@ export default function About() {
       {/* The Philosophy */}
       <section className="py-24 md:py-32 px-4 md:px-6 brutalist-border-bottom relative bg-background w-full overflow-hidden">
         <div className="max-w-container-max mx-auto w-full relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
-            <Reveal variant="left" className="md:col-span-4 lg:col-span-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
+            <Reveal variant="left" className="lg:col-span-4">
               <span className="inline-flex items-center font-geist text-sm md:text-base text-accent uppercase font-bold tracking-widest border-l-2 border-accent pl-4 h-fit">
                 PHILOSOPHY
               </span>
             </Reveal>
             
-            <div className="md:col-span-8 lg:col-span-8 flex flex-col gap-6">
-              <Reveal variant="right">
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+                }}
+              >
                 <h2 className="font-syne text-[32px] md:text-[48px] lg:text-[56px] text-on-background uppercase leading-tight font-extrabold tracking-tight">
-                  <span style={{ WebkitTextStroke: '1px var(--color-accent, #F05236)', color: 'transparent' }}>NO</span> SHORTCUTS.<br />
-                  <span style={{ WebkitTextStroke: '1px var(--color-accent, #F05236)', color: 'transparent' }}>ONLY</span> DISCIPLINE.
+                  <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block" style={{ WebkitTextStroke: '1px var(--color-accent, #F05236)', color: 'transparent' }}>NO</motion.span>{" "}
+                  <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">SHORTCUTS.</motion.span><br />
+                  <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block" style={{ WebkitTextStroke: '1px var(--color-accent, #F05236)', color: 'transparent' }}>ONLY</motion.span>{" "}
+                  <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">DISCIPLINE.</motion.span>
                 </h2>
-              </Reveal>
+              </motion.div>
               
-              <Reveal variant="right" delay={150}>
-                <p className="font-geist text-base md:text-lg text-on-surface-variant leading-relaxed max-w-2xl">
-                  The Alphaone Method is forged in the fires of raw discipline and unyielding strength. It is a
-                  calculated, systematic approach to human performance, designed for those who view fitness not as a
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={{
+                  hidden: { opacity: 0, x: -30 },
+                  visible: { 
+                    opacity: 1, 
+                    x: 0, 
+                    transition: { staggerChildren: 0.3, delayChildren: 0.6, duration: 0.8, ease: [0.22, 1, 0.36, 1] } 
+                  }
+                }}
+                className="font-geist text-base md:text-lg text-on-surface-variant leading-relaxed max-w-2xl"
+              >
+                <motion.span variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8 } } }}>
+                  The Alphaone Method is forged in the fires of raw discipline and unyielding strength.
+                </motion.span>
+                {" "}
+                <motion.span variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8 } } }}>
+                  It is a calculated, systematic approach to human performance, designed for those who view fitness not as a
                   leisure activity, but as a mandatory pursuit of excellence.
-                </p>
-              </Reveal>
+                </motion.span>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -178,14 +204,19 @@ export default function About() {
             </div>
             <div className="overflow-hidden mb-6">
               <motion.h2 
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
+                }}
                 className="font-syne text-[32px] md:text-[56px] text-on-background uppercase leading-tight font-extrabold tracking-tight"
               >
-                FORGED BY<br />
-                THE ELITE.
+                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">FORGED</motion.span>{" "}
+                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">BY</motion.span><br />
+                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">THE</motion.span>{" "}
+                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">ELITE.</motion.span>
               </motion.h2>
             </div>
             <div className="overflow-hidden">
@@ -207,35 +238,56 @@ export default function About() {
 
       {/* Who We Are */}
       <section className="py-24 px-4 md:px-6 brutalist-border-bottom max-w-container-max mx-auto w-full">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
-          <div className="md:col-span-5 md:col-start-2">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-5 lg:col-start-2">
             <div className="overflow-hidden mb-6">
               <motion.h2 
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+                }}
                 className="font-syne text-[32px] md:text-[56px] text-on-background uppercase leading-tight font-extrabold tracking-tight"
               >
-                Serious Training<br />
-                For Serious People.
+                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">Serious</motion.span>{" "}
+                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">Training</motion.span><br />
+                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">For</motion.span>{" "}
+                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">Serious</motion.span>{" "}
+                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">People.</motion.span>
               </motion.h2>
             </div>
             <div className="overflow-hidden mb-10 max-w-lg">
-              <motion.p 
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                variants={{
+                  hidden: { opacity: 0, x: -30 },
+                  visible: { 
+                    opacity: 1, 
+                    x: 0, 
+                    transition: { staggerChildren: 0.3, delayChildren: 0.6, duration: 0.8, ease: [0.22, 1, 0.36, 1] } 
+                  }
+                }}
                 className="font-geist text-sm md:text-base text-on-surface-variant leading-relaxed"
               >
-                We are not a social club. We are a performance facility. Our environment is curated to filter out the
-                noise and amplify focus. From Hyrox-inspired conditioning to heavy barbell mechanics, everything here
-                serves a singular purpose: progression.
-              </motion.p>
+                <motion.span variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8 } } }}>
+                  We are not a social club. We are a performance facility.
+                </motion.span>
+                {" "}
+                <motion.span variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8 } } }}>
+                  Our environment is curated to filter out the noise and amplify focus.
+                </motion.span>
+                {" "}
+                <motion.span variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8 } } }}>
+                  From Hyrox-inspired conditioning to heavy barbell mechanics, everything here serves a singular purpose: progression.
+                </motion.span>
+              </motion.div>
             </div>
           </div>
-          <Reveal variant="right" className="md:col-span-6 relative h-[600px] brutalist-border">
+          <Reveal variant="right" className="lg:col-span-6 relative h-[600px] brutalist-border">
             <img
               className="w-full h-full object-cover grayscale contrast-125 brightness-75 brutalist-border"
               alt="Training"
@@ -248,17 +300,32 @@ export default function About() {
       {/* The Community (Asymmetrical Gallery) */}
       <section className="py-24 brutalist-border-bottom bg-surface-container-lowest">
         <div className="max-w-container-max mx-auto px-4 md:px-6 mb-16">
-          <Reveal variant="left">
             <span className="font-geist text-xs text-accent uppercase mb-6 block border-l-2 border-accent pl-4 font-bold tracking-widest">
               COMMUNITY
             </span>
-            <h2 className="font-syne text-[32px] md:text-[56px] text-on-background uppercase font-extrabold tracking-tight">
-              THE PACK
-            </h2>
-          </Reveal>
+            <motion.h2 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+              }}
+              className="font-syne text-[32px] md:text-[56px] text-on-background uppercase font-extrabold tracking-tight"
+            >
+              {Array.from("THE PACK").map((char, index) => (
+                <motion.span 
+                  key={index} 
+                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
+                  className="inline-block"
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </motion.h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 px-4 md:px-6 max-w-container-max mx-auto">
-          <Reveal variant="left" className="md:col-span-7 relative group overflow-hidden h-[500px] brutalist-border">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 px-4 md:px-6 max-w-container-max mx-auto">
+          <Reveal variant="left" className="lg:col-span-7 relative group overflow-hidden h-[500px] brutalist-border">
             <img
               tabIndex={0}
               className="w-full h-full object-cover grayscale group-hover:scale-105 group-hover:grayscale-0 active:scale-105 active:grayscale-0 focus:scale-105 focus:grayscale-0 transition-all duration-700 cursor-pointer"
@@ -269,7 +336,7 @@ export default function About() {
               <p className="font-syne text-2xl text-on-background uppercase font-bold">Shared Suffering.</p>
             </div>
           </Reveal>
-          <Reveal variant="right" className="md:col-span-5 relative group overflow-hidden h-[400px] mt-0 md:mt-24 brutalist-border">
+          <Reveal variant="right" className="lg:col-span-5 relative group overflow-hidden h-[400px] mt-0 lg:mt-24 brutalist-border">
             <img
               tabIndex={0}
               className="w-full h-full object-cover grayscale group-hover:scale-105 group-hover:grayscale-0 active:scale-105 active:grayscale-0 focus:scale-105 focus:grayscale-0 transition-all duration-700 cursor-pointer"
@@ -291,14 +358,19 @@ export default function About() {
         <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
           <div className="overflow-hidden mb-6">
             <motion.h2 
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+              }}
               className="font-syne text-[32px] md:text-[56px] text-on-background uppercase leading-tight font-extrabold tracking-tight text-center"
             >
-              YOUR GOALS.<br />
-              EXPERTLY GUIDED.
+              <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">YOUR</motion.span>{" "}
+              <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">GOALS.</motion.span><br />
+              <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">EXPERTLY</motion.span>{" "}
+              <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }} className="inline-block">GUIDED.</motion.span>
             </motion.h2>
           </div>
           <div className="overflow-hidden mb-10 max-w-xl">

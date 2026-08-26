@@ -16,7 +16,7 @@ let isInitialRender = true;
 export default function PageWrapper({ children }) {
   const location = useLocation();
   const pageName = routeNames[location.pathname] || 'ALPHAONE';
-  
+
   const [isFirst] = useState(isInitialRender);
   const [showOverlay, setShowOverlay] = useState(!isFirst);
 
@@ -68,7 +68,7 @@ export default function PageWrapper({ children }) {
 
       {!showOverlay && (
         <motion.div
-          initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.98 }}
+          initial={isFirst ? false : { opacity: 0, filter: 'blur(10px)', scale: 0.98 }}
           animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
           exit={{ opacity: 0, filter: 'blur(10px)', scale: 1.02 }}
           transition={{

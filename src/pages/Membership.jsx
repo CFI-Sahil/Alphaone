@@ -150,7 +150,7 @@ export default function Membership() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h1 className="font-syne text-[30px] md:text-[64px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-on-background uppercase mb-4 tracking-tighter font-extrabold leading-none" style={{ perspective: '1000px' }}>
+            <h1 className="font-syne text-[30px] md:text-[60px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-on-background uppercase mb-4 tracking-tighter font-extrabold leading-none" style={{ perspective: '1000px' }}>
               <span className="block">
                 {"Membership".split(" ").map((w,i) => <motion.span key={i} variants={lineRevealVariants} className="inline-block mr-[0.25em] origin-bottom">{w}</motion.span>)}
               </span>
@@ -158,7 +158,7 @@ export default function Membership() {
                 {"Plans".split(" ").map((w,i) => <motion.span key={i} variants={lineRevealVariants} className="inline-block mr-[0.25em] origin-bottom">{w}</motion.span>)}
               </span>
             </h1>
-            <motion.p variants={itemVariants} className="font-geist text-[15px] md:text-lg text-on-surface-variant max-w-2xl mx-auto uppercase tracking-widest border-t border-b border-outline-variant/30 py-4">
+            <motion.p variants={itemVariants} className="font-geist text-[15px] md:text-base text-on-surface-variant max-w-2xl mx-auto uppercase tracking-widest border-t border-b border-outline-variant/30 py-4">
               Elite performance. Uncompromising discipline.
             </motion.p>
           </motion.div>
@@ -173,13 +173,13 @@ export default function Membership() {
             whileInView={{ y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="font-syne text-[32px] md:text-[56px] uppercase tracking-tight text-on-background font-extrabold m-0"
+            className="font-syne text-[32px] md:text-[52px] uppercase tracking-tight text-on-background font-extrabold m-0"
           >
             Choose Your Tier
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {tiers.map((tier, idx) => (
             <motion.div 
               key={idx} 
@@ -241,7 +241,7 @@ export default function Membership() {
         <motion.div variants={tableRowVariants} className="overflow-hidden pb-2 mb-12 text-center">
           <motion.h2 
             variants={{ hidden: { y: "100%" }, visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
-            className="font-syne text-[32px] md:text-[56px] uppercase tracking-tight text-on-background font-extrabold m-0"
+            className="font-syne text-[32px] md:text-[52px] uppercase tracking-tight text-on-background font-extrabold m-0"
           >
             Compare Benefits
           </motion.h2>
@@ -321,7 +321,7 @@ export default function Membership() {
             whileInView={{ y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="font-syne text-[32px] md:text-[56px] uppercase tracking-tight text-on-background font-extrabold m-0"
+            className="font-syne text-[32px] md:text-[52px] uppercase tracking-tight text-on-background font-extrabold m-0"
           >
             FAQ
           </motion.h2>
@@ -368,7 +368,7 @@ export default function Membership() {
                 <span className="hidden md:inline-block">
                   <span className="material-symbols-outlined text-4xl text-white">campaign</span>
                 </span>
-                <h2 className="font-syne text-3xl uppercase tracking-tight font-extrabold">Ready to Start?</h2>
+                <h2 className="font-syne text-2xl lg:text-3xl uppercase tracking-tight font-extrabold">Ready to Start?</h2>
               </motion.div>
             </div>
             <div className="overflow-hidden">
@@ -398,7 +398,7 @@ export default function Membership() {
                 visible: { scale: 1, opacity: 1, transition: { duration: 0.8, ease: [0.34, 1.56, 0.64, 1] } }
               }}
             >
-              <button className="btn-slide-fill-surface bg-white text-accent font-geist text-[12px] tracking-widest px-8 py-4 transition-colors font-bold uppercase w-full sm:w-auto cursor-pointer h-full">
+              <button className="btn-slide-fill-surface bg-white text-accent font-geist text-[10px] lg:text-[12px] tracking-widest px-4 lg:px-8 py-4 transition-colors font-bold uppercase w-full sm:w-auto cursor-pointer h-full">
                 BOOK FREE TRIAL
               </button>
             </motion.div>
@@ -412,7 +412,7 @@ export default function Membership() {
                 href="https://wa.me/918692020755?text=Hi%20AlphaOne%20Team%2C%20I'm%20interested%20in%20joining%20the%20club%21"
                 target="_blank"
                 rel="noreferrer"
-                className="btn-slide-fill-white bg-transparent text-white font-geist text-[12px] tracking-widest px-8 py-4 transition-colors duration-300 uppercase border border-white w-full sm:w-auto flex items-center justify-center gap-2 font-bold h-full"
+                className="btn-slide-fill-white bg-transparent text-white font-geist text-[10px] lg:text-[12px] tracking-widest px-4 lg:px-8 py-4 transition-colors duration-300 uppercase border border-white w-full sm:w-auto flex items-center justify-center gap-2 font-bold h-full"
               >
                 <i className="ri-whatsapp-fill text-lg"></i> WHATSAPP US
               </a>
