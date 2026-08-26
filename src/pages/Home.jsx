@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Reveal from '../components/Reveal';
+import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 
 function PriceCounter({ value }) {
@@ -176,6 +177,12 @@ export default function Home() {
 
   return (
     <div className="flex-grow">
+      <SEO
+        title="Premium Gym in Andheri West, Mumbai"
+        description="Alphaone Fitness Club is a premium strength, conditioning and performance training facility in Andheri West, Mumbai. HYROX training, Olympic Weightlifting & elite coaching."
+        path="/"
+        keywords="gym in Andheri West, premium fitness club Mumbai, HYROX training, Olympic Weightlifting, functional fitness, strength and conditioning, best gym Mumbai"
+      />
       {/* 1. Cinematic Hero Section */}
       <section className="relative w-full hero-full-height flex flex-col justify-start pt-24 md:justify-end md:pt-0 overflow-hidden bg-surface">
         <motion.div 
@@ -220,8 +227,11 @@ export default function Home() {
               <span>ANDHERI WEST, MUMBAI <span className="mx-2 text-on-surface-variant">•</span> 4000 SQFT AREA</span>
             </motion.span>
             <h1 className="font-syne text-[36px] md:text-[60px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px] text-ivory uppercase leading-[0.9] tracking-tighter font-extrabold" style={{ perspective: '1000px' }}>
+              {/* SEO Text (Hidden visually, readable by crawlers and screen readers) */}
+              <span className="sr-only">TRAIN HARD. MOVE BETTER. BECOME MORE.</span>
+              
               {/* Mobile View */}
-              <span className="md:hidden flex flex-col gap-4">
+              <span aria-hidden="true" className="md:hidden flex flex-col gap-4">
                 <motion.span variants={lineRevealVariants} className="block origin-bottom">TRAIN HARD.</motion.span>
                 <motion.span variants={lineRevealVariants} className="block origin-bottom">MOVE</motion.span>
                 <motion.span variants={lineRevealVariants} className="block origin-bottom">BETTER.</motion.span>
@@ -230,7 +240,7 @@ export default function Home() {
               </span>
               
               {/* Desktop View */}
-              <span className="hidden md:flex flex-col">
+              <span aria-hidden="true" className="hidden md:flex flex-col">
                 <motion.span variants={lineRevealVariants} className="block origin-bottom">TRAIN HARD.</motion.span>
                 <motion.span variants={lineRevealVariants} className="block origin-bottom">MOVE BETTER.</motion.span>
                 <motion.span variants={lineRevealVariants} className="stroke-text block origin-bottom">BECOME MORE.</motion.span>
@@ -383,7 +393,7 @@ export default function Home() {
                     </p>
                   </div>
                   {/* Watermark Index Number */}
-                  <span className="absolute bottom-2 right-4 font-syne text-[56px] leading-none font-black text-white/[0.03] select-none transition-colors group-hover:text-accent/[0.05]">
+                  <span aria-hidden="true" className="absolute bottom-2 right-4 font-syne text-[56px] leading-none font-black text-white/[0.03] select-none transition-colors group-hover:text-accent/[0.05]">
                     {`0${idx + 1}`}
                   </span>
                 </div>
@@ -463,6 +473,7 @@ export default function Home() {
                       <img
                         alt={item.title}
                         tabIndex={0}
+                        loading="lazy"
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 active:grayscale-0 active:scale-105 focus:grayscale-0 focus:scale-105 transition-all duration-700 cursor-pointer"
                         src={item.img}
                       />
@@ -476,12 +487,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="px-2 pb-2">
-                    <a
+                    <Link
+                      to="/training"
                       className="text-xs font-geist tracking-widest font-bold text-accent hover:text-surface border-b border-accent hover:border-surface pb-1 transition-all inline-block uppercase w-fit cursor-pointer"
-                      onClick={(e) => e.preventDefault()}
                     >
                       EXPLORE
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -633,12 +644,12 @@ export default function Home() {
               }}
               className="origin-left"
             >
-              <a
+              <Link
+                to="/training"
                 className="inline-block bg-surface text-ivory px-8 py-4 font-geist text-[12px] tracking-widest uppercase hover:bg-white hover:text-surface transition-colors font-bold cursor-pointer"
-                onClick={(e) => e.preventDefault()}
               >
                 EXPLORE HYROX
-              </a>
+              </Link>
             </motion.div>
           </div>
 
@@ -652,6 +663,7 @@ export default function Home() {
             <img
               alt="Hyrox Training"
               tabIndex={0}
+              loading="lazy"
               className="w-full h-full object-cover mix-blend-luminosity opacity-80 group-hover:mix-blend-normal group-hover:opacity-100 active:mix-blend-normal active:opacity-100 focus:mix-blend-normal focus:opacity-100 transition-all duration-500 cursor-pointer"
               src={hyroxBg}
             />
@@ -724,20 +736,21 @@ export default function Home() {
                     <img
                       alt={coach.name}
                       tabIndex={0}
+                      loading="lazy"
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-all duration-300 cursor-pointer"
                       src={coach.img}
                     />
                   </div>
-                  <h4 className="font-syne text-xl text-ivory uppercase font-bold">{coach.name}</h4>
+                  <h3 className="font-syne text-xl text-ivory uppercase font-bold">{coach.name}</h3>
                   <span className="text-accent font-geist text-xs uppercase tracking-widest mt-1 mb-6 block font-semibold">
                     {coach.role}
                   </span>
-                  <a
+                  <button
+                    type="button"
                     className="w-full text-center border border-outline-variant text-ivory py-2 font-geist text-[10px] tracking-widest hover:bg-ivory hover:text-surface transition-colors font-bold uppercase mt-auto cursor-pointer"
-                    onClick={(e) => e.preventDefault()}
                   >
                     VIEW PROFILE
-                  </a>
+                  </button>
                 </div>
               </motion.div>
             ))}
@@ -809,12 +822,12 @@ export default function Home() {
                 <div className="text-4xl font-syne text-ivory mb-8 font-extrabold">
                   <PriceCounter value="₹5,000" /><span className="text-sm text-on-surface-variant font-geist font-normal">/mo</span>
                 </div>
-                <a
-                  className="w-full text-center border border-outline-variant text-ivory py-3 font-geist text-[12px] tracking-widest hover:bg-ivory hover:text-surface transition-colors font-bold uppercase mt-auto cursor-pointer"
-                  onClick={(e) => e.preventDefault()}
+                <Link
+                  to="/membership"
+                  className="w-full block text-center border border-outline-variant text-ivory py-3 font-geist text-[12px] tracking-widest hover:bg-ivory hover:text-surface transition-colors font-bold uppercase mt-auto cursor-pointer"
                 >
                   JOIN NOW
-                </a>
+                </Link>
               </div>
             </motion.div>
 
@@ -834,12 +847,12 @@ export default function Home() {
                 <div className="text-4xl font-syne text-ivory mb-8 font-extrabold">
                   <PriceCounter value="₹8,500" /><span className="text-sm text-on-surface-variant font-geist font-normal">/mo</span>
                 </div>
-                <a
-                  className="w-full text-center bg-accent text-white py-3 font-geist text-[12px] tracking-widest hover:bg-white hover:text-surface transition-colors font-bold uppercase mt-auto cursor-pointer"
-                  onClick={(e) => e.preventDefault()}
+                <Link
+                  to="/membership"
+                  className="w-full block text-center bg-accent text-white py-3 font-geist text-[12px] tracking-widest hover:bg-white hover:text-surface transition-colors font-bold uppercase mt-auto cursor-pointer"
                 >
                   JOIN NOW
-                </a>
+                </Link>
               </div>
             </motion.div>
 
@@ -870,12 +883,12 @@ export default function Home() {
                   <motion.span variants={{ hidden: { y: "100%" }, visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}>O</motion.span>
                   <motion.span variants={{ hidden: { y: "100%" }, visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}>M</motion.span>
                 </motion.div>
-                <a
-                  className="w-full text-center border border-outline-variant text-ivory py-3 font-geist text-[12px] tracking-widest hover:bg-ivory hover:text-surface transition-colors font-bold uppercase mt-auto cursor-pointer"
-                  onClick={(e) => e.preventDefault()}
+                <Link
+                  to="/membership"
+                  className="w-full block text-center border border-outline-variant text-ivory py-3 font-geist text-[12px] tracking-widest hover:bg-ivory hover:text-surface transition-colors font-bold uppercase mt-auto cursor-pointer"
                 >
                   INQUIRE NOW
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -1077,6 +1090,7 @@ export default function Home() {
           <img 
             src={brandLogo} 
             alt="AlphaOne Watermark" 
+            loading="lazy"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 opacity-5 pointer-events-none grayscale mix-blend-luminosity"
           />
           
@@ -1115,7 +1129,7 @@ export default function Home() {
               </motion.div>
               <div>
                 <div className="overflow-hidden">
-                  <motion.h4 
+                  <motion.h3 
                     variants={{
                       hidden: { y: "150%" },
                       visible: { y: 0, transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } }
@@ -1123,7 +1137,7 @@ export default function Home() {
                     className="font-geist text-xs text-ivory uppercase tracking-widest mb-1 font-bold"
                   >
                     Address
-                  </motion.h4>
+                  </motion.h3>
                 </div>
                 <div className="overflow-hidden">
                   <motion.a
@@ -1152,7 +1166,7 @@ export default function Home() {
               </motion.div>
               <div>
                 <div className="overflow-hidden">
-                  <motion.h4 
+                  <motion.h3 
                     variants={{
                       hidden: { y: "150%" },
                       visible: { y: 0, transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } }
@@ -1160,7 +1174,7 @@ export default function Home() {
                     className="font-geist text-xs text-ivory uppercase tracking-widest mb-1 font-bold"
                   >
                     Phone
-                  </motion.h4>
+                  </motion.h3>
                 </div>
                 <div className="overflow-hidden">
                   <motion.p 

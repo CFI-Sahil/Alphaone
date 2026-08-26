@@ -56,14 +56,14 @@ export default function Footer() {
         {/* Links */}
         <div className="flex flex-col gap-4">
           <div className="overflow-hidden">
-            <motion.h4 variants={maskReveal} className="font-geist text-xs text-on-surface uppercase tracking-widest font-semibold mb-2">
+            <motion.p variants={maskReveal} className="font-geist text-xs text-on-surface uppercase tracking-widest font-semibold mb-2">
               LINKS
-            </motion.h4>
+            </motion.p>
           </div>
           <div className="overflow-hidden">
             <Link to="/facilities" className="block">
               <motion.span variants={maskReveal} className="block font-geist text-xs text-on-surface-variant uppercase hover:text-accent transition-colors">
-                LOCATIONS
+                FACILITIES
               </motion.span>
             </Link>
           </div>
@@ -93,9 +93,9 @@ export default function Footer() {
         {/* Contact/Address */}
         <div className="flex flex-col gap-4 md:col-span-1 lg:col-span-2 md:text-left">
           <div className="overflow-hidden">
-            <motion.h4 variants={maskReveal} className="font-geist text-xs text-on-surface uppercase mb-2 tracking-widest font-semibold">
+            <motion.p variants={maskReveal} className="font-geist text-xs text-on-surface uppercase mb-2 tracking-widest font-semibold">
               CONTACT US
-            </motion.h4>
+            </motion.p>
           </div>
           <a
             href="https://www.google.com/maps/search/?api=1&query=LG1%2C+Maplle+Morya+Classic+building%2C+Opposite+Infinity+mall%2C+beside+What%27s+your+Bahana%2C+Andheri+West%2C+Mumbai"
@@ -117,9 +117,9 @@ export default function Footer() {
               phone
             </motion.span>
             <div className="overflow-hidden">
-              <motion.p variants={maskReveal} className="font-geist text-sm text-on-surface-variant font-bold">
+              <motion.a href="tel:+918692020755" variants={maskReveal} className="font-geist text-sm text-on-surface-variant font-bold hover:text-accent transition-colors block">
                 +91 86920 20755
-              </motion.p>
+              </motion.a>
             </div>
           </div>
           

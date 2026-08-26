@@ -1,5 +1,6 @@
 import React from 'react';
-import Reveal from '../components/Reveal';
+import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 
 // Import local images from assets folder
@@ -70,6 +71,12 @@ export default function Training() {
 
   return (
     <div className="flex-grow">
+      <SEO
+        title="Training Programs"
+        description="Explore elite training programs at Alphaone Fitness Club — Strength & Conditioning, Olympic Weightlifting, HYROX preparation, functional fitness and personal training in Andheri West, Mumbai."
+        path="/training"
+        keywords="strength and conditioning Mumbai, Olympic Weightlifting training, HYROX training Mumbai, personal training Andheri West, functional fitness"
+      />
       {/* Hero Section */}
       <section className="relative w-full hero-full-height flex items-center justify-center brutalist-border-bottom overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -104,17 +111,15 @@ export default function Training() {
             <motion.p variants={itemVariants} className="font-geist text-base md:text-lg text-tertiary max-w-2xl mx-auto mb-10 leading-relaxed">
               Uncompromising methodology. Elite equipment. Measurable results. Step into the arena.
             </motion.p>
-            <motion.a
-              variants={itemVariants}
-              href="#arsenal"
-              onClick={(e) => {
-                e.preventDefault();
+            <button
+              onClick={() => {
                 document.getElementById('arsenal').scrollIntoView({ behavior: 'smooth' });
               }}
+              type="button"
               className="btn-slide-fill inline-block bg-ivory text-black font-geist text-[12px] tracking-widest px-8 py-4 transition-colors duration-300 font-bold uppercase cursor-pointer"
             >
               DISCOVER PROGRAMS
-            </motion.a>
+            </button>
           </motion.div>
         </div>
       </section>
@@ -150,19 +155,32 @@ export default function Training() {
               Our core training pillars designed for complete athletic development.
             </motion.p>
           </motion.div>
-          <Reveal variant="right" className="hidden md:block">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden md:block"
+          >
             <span className="material-symbols-outlined text-4xl text-accent">fitness_center</span>
-          </Reveal>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {arsenalItems.map((item, idx) => (
-            <Reveal key={idx} variant="up" delay={idx * 100}>
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="brutalist-border bg-surface flex flex-col group hover:bg-[#262626] transition-colors duration-300 h-full">
                 <div className="h-48 w-full bg-surface-container-highest overflow-hidden border-b border-[#262626]">
                   <img
                     alt={item.title}
                     tabIndex={0}
+                    loading="lazy"
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-all duration-500 cursor-pointer"
                     src={item.img}
                   />
@@ -189,7 +207,7 @@ export default function Training() {
                   </div>
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -365,7 +383,7 @@ export default function Training() {
               </ul>
             </motion.div>
             
-            <motion.a
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
@@ -373,25 +391,35 @@ export default function Training() {
                 hidden: { scale: 0, opacity: 0 },
                 visible: { scale: 1, opacity: 1, transition: { duration: 1.2, ease: [0.34, 1.56, 0.64, 1] } }
               }}
-              href="#coaches"
-              onClick={(e) => e.preventDefault()}
-              className="btn-slide-fill inline-block bg-ivory text-black font-geist text-[12px] tracking-widest px-8 py-4 transition-colors duration-300 font-bold uppercase cursor-pointer"
+              className="inline-block"
             >
-              MEET THE COACHES
-            </motion.a>
+              <Link
+                to="/#coaches"
+                className="btn-slide-fill inline-block bg-ivory text-black font-geist text-[12px] tracking-widest px-8 py-4 transition-colors duration-300 font-bold uppercase cursor-pointer"
+              >
+                MEET THE COACHES
+              </Link>
+            </motion.div>
           </div>
 
-          <Reveal variant="right" className="order-1 lg:order-2 relative">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            className="order-1 lg:order-2 relative"
+          >
             <div className="brutalist-border p-2 w-full aspect-[3/4]">
               <img
                 alt="Personal Training Session"
+                loading="lazy"
                 className="w-full h-full object-cover transition-all duration-500"
                 src={goalsImg}
               />
             </div>
             {/* Decorative geometric element */}
             <div className="absolute -z-10 top-6 -right-6 w-full h-full border border-accent/30 hidden lg:block"></div>
-          </Reveal>
+          </motion.div>
         </div>
       </section>
     </div>

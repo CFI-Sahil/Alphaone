@@ -1,5 +1,5 @@
 import React from 'react';
-import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 
 // Import local images from assets folder
@@ -27,6 +27,12 @@ export default function About() {
   };
   return (
     <div className="flex-grow w-full">
+      <SEO
+        title="About Us"
+        description="Learn about Alphaone Fitness Club — our mission, philosophy, elite coaching team, and the community driving Mumbai's most serious athletes in Andheri West."
+        path="/about"
+        keywords="about Alphaone Fitness Club, gym philosophy Mumbai, elite coaching team, fitness community Andheri West"
+      />
       {/* Hero Section */}
       <section className="relative hero-full-height flex items-center justify-center brutalist-border-bottom overflow-hidden bg-background">
         <div className="absolute inset-0 z-0">
@@ -66,11 +72,17 @@ export default function About() {
       <section className="py-24 md:py-32 px-4 md:px-6 brutalist-border-bottom relative bg-background w-full overflow-hidden">
         <div className="max-w-container-max mx-auto w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
-            <Reveal variant="left" className="lg:col-span-4">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-4"
+            >
               <span className="inline-flex items-center font-geist text-sm md:text-base text-accent uppercase font-bold tracking-widest border-l-2 border-accent pl-4 h-fit">
                 PHILOSOPHY
               </span>
-            </Reveal>
+            </motion.div>
             
             <div className="lg:col-span-8 flex flex-col gap-6">
               <motion.div
@@ -120,9 +132,15 @@ export default function About() {
 
       {/* The Alphaone Method (Feature Grid) */}
       <section className="py-24 px-4 md:px-6 brutalist-border-bottom bg-surface-container-lowest relative">
+        <h2 className="sr-only">The Alphaone Method Features</h2>
         <div className="max-w-container-max mx-auto w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Reveal variant="up" delay={0}>
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="brutalist-border p-8 bg-background/50 hover:bg-surface-variant transition-colors group h-full">
                 <div className="flex items-center gap-4 mb-4">
                   <span className="material-symbols-outlined text-[48px] text-accent block group-hover:scale-110 transition-transform">
@@ -134,9 +152,15 @@ export default function About() {
                   Functional training pushed to its absolute limit.
                 </p>
               </div>
-            </Reveal>
+            </motion.div>
 
-            <Reveal variant="up" delay={150} className="mt-0 lg:mt-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-0 lg:mt-12"
+            >
               <div className="brutalist-border p-8 bg-background/50 hover:bg-surface-variant transition-colors group h-full">
                 <div className="flex items-center gap-4 mb-4">
                   <span className="material-symbols-outlined text-[48px] text-accent block group-hover:scale-110 transition-transform">
@@ -148,9 +172,15 @@ export default function About() {
                   Calculated, tested programming to forge unbreakable humans.
                 </p>
               </div>
-            </Reveal>
+            </motion.div>
 
-            <Reveal variant="up" delay={300} className="mt-0 lg:mt-24">
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-0 lg:mt-24"
+            >
               <div className="brutalist-border p-8 bg-background/50 hover:bg-surface-variant transition-colors group h-full">
                 <div className="flex items-center gap-4 mb-4">
                   <span className="material-symbols-outlined text-[48px] text-accent block group-hover:scale-110 transition-transform">
@@ -162,7 +192,7 @@ export default function About() {
                   We provide the tools. You bring the raw discipline.
                 </p>
               </div>
-            </Reveal>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -173,6 +203,7 @@ export default function About() {
           <img
             className="w-full h-full object-cover opacity-20 grayscale"
             alt="AlphaOne Gym Background"
+            loading="lazy"
             src={aboutHero2}
           />
           <div className="absolute inset-0 editorial-overlay"></div>
@@ -180,13 +211,20 @@ export default function About() {
         
         {/* Absolute positioned wolf image at bottom left */}
         <div className="absolute bottom-0 left-0 md:left-10 w-[70%] md:w-[40%] lg:w-[30%] max-w-[450px] z-10 pointer-events-none flex items-end">
-          <Reveal variant="left" className="w-full">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full"
+          >
             <img 
               src={wolfTransparent} 
               alt="AlphaOne Wolf Logo" 
+              loading="lazy"
               className="w-full h-auto object-contain drop-shadow-2xl opacity-90" 
             />
-          </Reveal>
+          </motion.div>
         </div>
 
         <div className="relative z-20 max-w-container-max mx-auto px-4 md:px-6">
@@ -287,13 +325,20 @@ export default function About() {
               </motion.div>
             </div>
           </div>
-          <Reveal variant="right" className="lg:col-span-6 relative h-[600px] brutalist-border">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 relative h-[600px] brutalist-border"
+          >
             <img
               className="w-full h-full object-cover grayscale contrast-125 brightness-75 brutalist-border"
               alt="Training"
+              loading="lazy"
               src={abt3}
             />
-          </Reveal>
+          </motion.div>
         </div>
       </section>
 
@@ -325,28 +370,42 @@ export default function About() {
             </motion.h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 px-4 md:px-6 max-w-container-max mx-auto">
-          <Reveal variant="left" className="lg:col-span-7 relative group overflow-hidden h-[500px] brutalist-border">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7 relative group overflow-hidden h-[500px] brutalist-border"
+          >
             <img
               tabIndex={0}
               className="w-full h-full object-cover grayscale group-hover:scale-105 group-hover:grayscale-0 active:scale-105 active:grayscale-0 focus:scale-105 focus:grayscale-0 transition-all duration-700 cursor-pointer"
               alt="Shared Suffering"
+              loading="lazy"
               src={shareSuffering}
             />
             <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-background to-transparent">
               <p className="font-syne text-2xl text-on-background uppercase font-bold">Shared Suffering.</p>
             </div>
-          </Reveal>
-          <Reveal variant="right" className="lg:col-span-5 relative group overflow-hidden h-[400px] mt-0 lg:mt-24 brutalist-border">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 relative group overflow-hidden h-[400px] mt-0 lg:mt-24 brutalist-border"
+          >
             <img
               tabIndex={0}
               className="w-full h-full object-cover grayscale group-hover:scale-105 group-hover:grayscale-0 active:scale-105 active:grayscale-0 focus:scale-105 focus:grayscale-0 transition-all duration-700 cursor-pointer"
               alt="Absolute Power"
+              loading="lazy"
               src={abtPower}
             />
             <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-background to-transparent">
               <p className="font-syne text-2xl text-on-background uppercase font-bold">Absolute Power.</p>
             </div>
-          </Reveal>
+          </motion.div>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 
 function PriceCounter({ value }) {
@@ -129,6 +129,12 @@ export default function Membership() {
 
   return (
     <div className="flex-grow w-full">
+      <SEO
+        title="Membership Plans & Pricing"
+        description="Join Alphaone Fitness Club with flexible membership plans — Open Gym, All Access and Personal Training. Book a free trial at our premium gym in Andheri West, Mumbai."
+        path="/membership"
+        keywords="gym membership Andheri West, fitness club pricing Mumbai, personal training membership, gym free trial Mumbai"
+      />
       {/* Hero Section */}
       <section className="relative w-full hero-full-height flex items-center justify-center overflow-hidden border-b border-outline-variant">
         <div className="absolute inset-0 z-0">

@@ -1,5 +1,5 @@
 import React from 'react';
-import Reveal from '../components/Reveal';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 
 // Import local images from assets folder
@@ -28,6 +28,12 @@ export default function Facilities() {
   };
   return (
     <div className="flex-grow w-full">
+      <SEO
+        title="World-Class Facilities"
+        description="Explore Alphaone Fitness Club's 4000 sqft premium facility in Andheri West — strength equipment, cardio zone, functional training area, steam room, lounge and nutrition counselling."
+        path="/facilities"
+        keywords="gym facilities Andheri West, premium gym equipment Mumbai, steam room gym, functional training area, strength equipment"
+      />
       {/* Hero Section */}
       <section className="relative w-full hero-full-height flex items-center justify-center border-b border-outline-variant overflow-hidden">
         <div className="absolute inset-0 z-0 bg-surface-container-highest">
@@ -103,11 +109,17 @@ export default function Facilities() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Strength */}
-            <Reveal variant="up" delay={0}>
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="group relative aspect-[3/4] overflow-hidden brutalist-border border-background/20 bg-background/5">
                 <img
                   alt="Strength equipment close up"
                   tabIndex={0}
+                  loading="lazy"
                   className="w-full h-full object-cover filter grayscale contrast-125 hover:contrast-100 hover:scale-105 hover:grayscale-0 active:contrast-100 active:scale-105 active:grayscale-0 focus:contrast-100 focus:scale-105 focus:grayscale-0 transition-all duration-700 mix-blend-multiply hover:mix-blend-normal active:mix-blend-normal focus:mix-blend-normal cursor-pointer"
                   src={strengthArsenal}
                 />
@@ -115,14 +127,20 @@ export default function Facilities() {
                   <h3 className="font-syne text-2xl uppercase font-bold text-white">Strength</h3>
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
 
             {/* Cardio */}
-            <Reveal variant="up" delay={100}>
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="group relative aspect-[3/4] overflow-hidden brutalist-border border-background/20 bg-background/5">
                 <img
                   alt="Cardio environment"
                   tabIndex={0}
+                  loading="lazy"
                   className="w-full h-full object-cover filter grayscale contrast-125 hover:contrast-100 hover:scale-105 hover:grayscale-0 active:contrast-100 active:scale-105 active:grayscale-0 focus:contrast-100 focus:scale-105 focus:grayscale-0 transition-all duration-700 mix-blend-multiply hover:mix-blend-normal active:mix-blend-normal focus:mix-blend-normal cursor-pointer"
                   src={cardioImage}
                 />
@@ -130,14 +148,20 @@ export default function Facilities() {
                   <h3 className="font-syne text-2xl uppercase font-bold text-white">Cardio</h3>
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
 
             {/* Functional */}
-            <Reveal variant="up" delay={200}>
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="group relative aspect-[3/4] overflow-hidden brutalist-border border-background/20 bg-background/5">
                 <img
                   alt="Functional training equipment"
                   tabIndex={0}
+                  loading="lazy"
                   className="w-full h-full object-cover filter grayscale contrast-125 hover:contrast-100 hover:scale-105 hover:grayscale-0 active:contrast-100 active:scale-105 active:grayscale-0 focus:contrast-100 focus:scale-105 focus:grayscale-0 transition-all duration-700 mix-blend-multiply hover:mix-blend-normal active:mix-blend-normal focus:mix-blend-normal cursor-pointer"
                   src={functionalTraining}
                 />
@@ -145,7 +169,7 @@ export default function Facilities() {
                   <h3 className="font-syne text-2xl uppercase font-bold text-white">Functional</h3>
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -192,11 +216,17 @@ export default function Facilities() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Steam & Showers */}
-            <Reveal variant="left">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="group relative aspect-square md:aspect-[4/3] overflow-hidden brutalist-border border-on-background/20">
                 <img
                   alt="Steam and Showers facility"
                   tabIndex={0}
+                  loading="lazy"
                   className="w-full h-full object-cover filter grayscale contrast-125 hover:contrast-100 hover:scale-105 hover:grayscale-0 active:contrast-100 active:scale-105 active:grayscale-0 focus:contrast-100 focus:scale-105 focus:grayscale-0 transition-all duration-700 cursor-pointer"
                   src={steamImage}
                 />
@@ -204,14 +234,20 @@ export default function Facilities() {
                   <h3 className="font-syne text-2xl uppercase font-bold text-white">Steam & Showers</h3>
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
 
             {/* Nutrition Protocol */}
-            <Reveal variant="right">
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="group relative aspect-square md:aspect-[4/3] overflow-hidden brutalist-border border-on-background/20">
                 <img
                   alt="Nutrition counseling protocol"
                   tabIndex={0}
+                  loading="lazy"
                   className="w-full h-full object-cover filter grayscale contrast-125 hover:contrast-100 hover:scale-105 hover:grayscale-0 active:contrast-100 active:scale-105 active:grayscale-0 focus:contrast-100 focus:scale-105 focus:grayscale-0 transition-all duration-700 cursor-pointer"
                   src={nutritionImage}
                 />
@@ -219,7 +255,7 @@ export default function Facilities() {
                   <h3 className="font-syne text-2xl uppercase font-bold text-white">Nutrition Protocol</h3>
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -266,11 +302,17 @@ export default function Facilities() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Reception */}
-            <Reveal variant="left">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="group relative aspect-square md:aspect-[4/3] overflow-hidden brutalist-border border-background/20 bg-background/5">
                 <img
                   alt="Reception area"
                   tabIndex={0}
+                  loading="lazy"
                   className="w-full h-full object-cover filter grayscale contrast-125 hover:contrast-100 hover:scale-105 hover:grayscale-0 active:contrast-100 active:scale-105 active:grayscale-0 focus:contrast-100 focus:scale-105 focus:grayscale-0 transition-all duration-700 mix-blend-multiply hover:mix-blend-normal active:mix-blend-normal focus:mix-blend-normal cursor-pointer"
                   src={receptionImage}
                 />
@@ -278,14 +320,20 @@ export default function Facilities() {
                   <h3 className="font-syne text-2xl uppercase font-bold text-white">Reception</h3>
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
 
             {/* Lounge Area */}
-            <Reveal variant="right">
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="group relative aspect-square md:aspect-[4/3] overflow-hidden brutalist-border border-background/20 bg-background/5">
                 <img
                   alt="Lounge Area"
                   tabIndex={0}
+                  loading="lazy"
                   className="w-full h-full object-cover filter grayscale contrast-125 hover:contrast-100 hover:scale-105 hover:grayscale-0 active:contrast-100 active:scale-105 active:grayscale-0 focus:contrast-100 focus:scale-105 focus:grayscale-0 transition-all duration-700 mix-blend-multiply hover:mix-blend-normal active:mix-blend-normal focus:mix-blend-normal cursor-pointer"
                   src={loungeAreaImage}
                 />
@@ -293,7 +341,7 @@ export default function Facilities() {
                   <h3 className="font-syne text-2xl uppercase font-bold text-white">Lounge Area</h3>
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
           </div>
         </div>
       </section>

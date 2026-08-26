@@ -9,6 +9,7 @@ import Training from './pages/Training';
 import Facilities from './pages/Facilities';
 import Membership from './pages/Membership';
 import About from './pages/About';
+import NotFound from './pages/NotFound';
 import PageWrapper from './components/PageWrapper';
 import Loader from './components/Loader';
 
@@ -66,6 +67,7 @@ function AnimatedRoutes() {
         <Route path="/facilities" element={<PageWrapper><Facilities /></PageWrapper>} />
         <Route path="/membership" element={<PageWrapper><Membership /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+        <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   );
